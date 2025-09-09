@@ -1,9 +1,14 @@
+import { RouterProvider } from "react-router-dom"
+import { ThemeProvider } from "./Providers/ThemeProvider"
+import {router} from './routes/routes.tsx'
+
 function App() {
 
   return (
-    <>
-   <div className='w-100 h-100 bg-red-500'>   Project start here</div>
-    </>
+    <ThemeProvider>
+      <RouterProvider router={router}>
+      </RouterProvider>
+    </ThemeProvider>
   )
 }
 
