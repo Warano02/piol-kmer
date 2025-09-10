@@ -4,7 +4,7 @@ import homeImg from "@/assets/icon/home.avif"
 import { useAppContext } from "@/hooks/useAppContext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe, faBars, type IconDefinition } from "@fortawesome/free-solid-svg-icons"
-import { faHeart } from "@fortawesome/free-regular-svg-icons"
+import { faHeart,faCircleQuestion } from "@fortawesome/free-regular-svg-icons"
 import { useState } from "react"
 function Header() {
     const { user, setShowCurrencySettings } = useAppContext()
@@ -31,6 +31,18 @@ function Header() {
             to: "/profil"
         },
     ]
+    const list2=[
+        {
+            text: "Find a co-host",
+            icon: undefined,
+            to: "/co-host"
+        },
+          {
+            text: "Gift Cards",
+            icon: undefined,
+            to: "/giftcards"
+        }
+    ]
     return (
         <div className="w-full h-[83px] relative px-8 bg-white-secondary flex justify-between items-center">
             <Logo />
@@ -42,8 +54,13 @@ function Header() {
                     <img src={user?.profile} alt="Profile pricture" className="w-10 h-10 rounded-full" />
                 </Link>}
                 <span className="w-10 h-10 rounded-full bg-gray cursor-pointer flex items-center justify-center" onClick={() => setMenu(pv => !pv)}><FontAwesomeIcon icon={faBars} className="text-gray-500" /> </span>
-                {menu && <ul className="absolute w-[276px] py-2 bg-white shadow bottom-[-25px] right-2 p-4" style={{ borderRadius: "10px 0 0 10px" }}>
+                {menu && <ul className="absolute w-[276px] py-2 bg-white shadow top-20 right-2 p-4 flex flex-col gap-2" style={{ borderRadius: "10px 0 0 10px" }}>
                     {user && list1.map(el => <Li text={el.text} icon={el.icon} to={el.to} />)}
+                                    <Li text="Help Center" to="/faq" icon={faCircleQuestion}/>
+<hr />
+{list2.map(el=><Li text={el.text} icon={el.icon} to={el.to} />)}
+<hr />
+{ user?<div className="hover:bg-gray w-full cursor-pointer">Logout</div>:<div className="hover:bg-gray w-full cursor-pointer">Log in or sign up</div>}
 
                 </ul>}
             </div>
@@ -53,8 +70,8 @@ function Header() {
     )
 }
 
-function Li({ text, icon, to }: { text: string, icon: IconDefinition, to: string }) {
-    return <Link to={to} className="bg-white-secondary w-full ">
+function Li({ text, icon, to }: { text: string, icon: IconDefinition|undefined, to: string }) {
+    return <Link to={to} className="hover:bg-gray w-full ">
         {icon && <FontAwesomeIcon icon={icon} />}
         <span>{text} </span>
     </Link>
