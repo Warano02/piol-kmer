@@ -1,14 +1,17 @@
 import { RouterProvider } from "react-router-dom"
 import { ThemeProvider } from "./Providers/ThemeProvider"
-import {router} from './routes/routes.tsx'
+import { router } from './routes/routes.tsx'
+import { AppProvider } from "./Providers/AppProvider.tsx"
 
 function App() {
 
   return (
-    <ThemeProvider>
-      <RouterProvider router={router}>
-      </RouterProvider>
-    </ThemeProvider>
+    <AppProvider>
+      <ThemeProvider>
+        <RouterProvider router={router}>
+        </RouterProvider>
+      </ThemeProvider>
+    </AppProvider>
   )
 }
 

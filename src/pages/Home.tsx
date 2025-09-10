@@ -1,10 +1,11 @@
-import Logo from "@/components/Logo"
+import Header from "@/components/Home/Header"
+
 
 function Home() {
   return (
-    <div>Home Page
-      <Logo/>
-    </div>
+    <>
+      <Header />
+    </>
   )
 }
 
