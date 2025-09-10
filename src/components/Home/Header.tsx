@@ -8,7 +8,7 @@ import { faHeart,faCircleQuestion } from "@fortawesome/free-regular-svg-icons"
 import { useState } from "react"
 function Header() {
     const { user, setShowCurrencySettings } = useAppContext()
-    const [menu, setMenu] = useState(true)
+    const [menu, setMenu] = useState(false)
     const list1 = [
         {
             text: "Whitlist",

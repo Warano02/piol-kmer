@@ -11,3 +11,5 @@ export type AppContextType = {
   setShowCurrencySettings:React.Dispatch<React.SetStateAction<boolean>>;
   
 };
+
+export type CurrencySettingsProps={name:string,abr:string,signe:string,isSelected:boolean}
