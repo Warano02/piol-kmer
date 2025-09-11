@@ -6,10 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe, faBars, type IconDefinition } from "@fortawesome/free-solid-svg-icons"
 import { faHeart, faCircleQuestion } from "@fortawesome/free-regular-svg-icons"
 import { useState } from "react"
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
-import { Label } from "../ui/label"
+
+import SemiHeader from "./SemiHeader"
 function Header() {
     const { user, setShowCurrencySettings } = useAppContext()
     const [menu, setMenu] = useState(false)
@@ -84,7 +82,7 @@ function Li({ text, icon, to }: { text: string, icon: IconDefinition | undefined
 function HeaderMainSection() {
     const { showPlaceFilter } = useAppContext()
     if (!showPlaceFilter) {
-        return <div className="h-10  rounded-2xl border-1 font-stretch-110% border-white shadow flex justify-around items-center gap-1 relative px-2 font-medium hover:shadow-xl transition-all">
+        return <header className="h-10  rounded-2xl border-1 font-stretch-110% border-white shadow flex justify-around items-center gap-1 relative px-2 font-medium hover:shadow-xl transition-all">
             <div className="flex items-center cursor-pointer">
                 <img src={homeImg} alt="Image of home" width={40} />
                 <span> Anywhere</span>
@@ -103,40 +101,20 @@ function HeaderMainSection() {
                     </svg>
                 </span>
             </div>
-        </div>
+        </header>
     }
-    return <Dialog>
-        <DialogTrigger asChild>
-            <Button variant="outline">Share</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-md">
-            <DialogHeader>
-                <DialogTitle>Share link</DialogTitle>
-                <DialogDescription>
-                    Anyone who has this link will be able to view this.
-                </DialogDescription>
-            </DialogHeader>
-            <div className="flex items-center gap-2">
-                <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                        Link
-                    </Label>
-                    <Input
-                        id="link"
-                        defaultValue="https://ui.shadcn.com/docs/installation"
-                        readOnly
-                    />
-                </div>
-            </div>
-            <DialogFooter className="sm:justify-start">
-                <DialogClose asChild>
-                    <Button type="button" variant="secondary">
-                        Close
-                    </Button>
-                </DialogClose>
-            </DialogFooter>
-        </DialogContent>
-    </Dialog>
+    return <>
+        <SemiHeader headerSearch={showPlaceFilter} />
+        <div className="absolute z-30 hidden lg:block w-full"
+            style={{
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+            }}>
+            
+
+        </div>
+    </>
 }
 
 export default Header

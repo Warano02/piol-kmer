@@ -60,7 +60,7 @@ export const AppProvider = ({ children }: Props) => {
   //     profile: icon
   // }
   const [user, setUser] = useState<User | undefined>(undefined)
-  const [showPlaceFilter, setShowPlaceFilter] = useState(false)
+  const [showPlaceFilter, setShowPlaceFilter] = useState(true)
   const [showCurrencySettings, setShowCurrencySettings] = useState(false)
   const [currency, setCurrency] = useState("USD")
   const [Homes, setHomes] = useState<SingleHome[] | []>([])

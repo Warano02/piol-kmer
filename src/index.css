@@ -9,6 +9,11 @@
   --color-white-secondary: #fafafa;
   --color-gray: #ebebeb;
 }
+* {
+  font-family: "Inter", sans-serif;
+  transition: top 250ms ease, scale 250ms ease, visibility 250ms ease, opacity 250ms ease, padding 250ms ease !important;
+  box-sizing: border-box !important;
+}
 
 @theme inline {
   --color-primary: #ff385c;
@@ -129,3 +134,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+/****************************
+     Header visibility      *
+*                           *
+****************************/
+.header_search_layout_two_inactive {
+  z-index: -1;
+  scale: 0.42;
+  transform-origin: top left;
+  visibility: hidden;
+  opacity: 0;
+  top: 50%;
+}
+
+.header_search_layout_two_active {
+  scale: 1;
+  transform-origin: top left;
+  visibility: visible;
+  opacity: 1;
+  top: calc(50% + 80px) !important;
+}
+
+.semi_header_inactive {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translate(-60%, -50%) scale(0.4);
+}
+
+.semi_header_active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
