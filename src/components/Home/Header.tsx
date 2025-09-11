@@ -8,6 +8,7 @@ import { faHeart, faCircleQuestion } from "@fortawesome/free-regular-svg-icons"
 import { useState } from "react"
 
 import SemiHeader from "./SemiHeader"
+import HeaderSearchLayoutOne from "./HeaderSearchLayoutOne"
 function Header() {
     const { user, setShowCurrencySettings } = useAppContext()
     const [menu, setMenu] = useState(false)
@@ -80,7 +81,8 @@ function Li({ text, icon, to }: { text: string, icon: IconDefinition | undefined
 }
 
 function HeaderMainSection() {
-    const { showPlaceFilter } = useAppContext()
+    const { showPlaceFilter, destination, selectedDay, selectedEnd } = useAppContext()
+    const [selection, setSelection] = useState<string | null>(null)
     if (!showPlaceFilter) {
         return <header className="h-10  rounded-2xl border-1 font-stretch-110% border-white shadow flex justify-around items-center gap-1 relative px-2 font-medium hover:shadow-xl transition-all">
             <div className="flex items-center cursor-pointer">
@@ -103,6 +105,7 @@ function HeaderMainSection() {
             </div>
         </header>
     }
+
     return <>
         <SemiHeader headerSearch={showPlaceFilter} />
         <div className="absolute z-30 hidden lg:block w-full"
@@ -111,7 +114,7 @@ function HeaderMainSection() {
                 left: "50%",
                 transform: "translate(-50%, -50%)",
             }}>
-            
+            <HeaderSearchLayoutOne selectEnd={selectedEnd} selectedDay={selectedDay} headerSearch={showPlaceFilter} setSelection={setSelection} selection={selection} destination={destination} />
 
         </div>
     </>

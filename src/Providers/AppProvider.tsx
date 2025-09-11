@@ -65,7 +65,9 @@ export const AppProvider = ({ children }: Props) => {
   const [currency, setCurrency] = useState("USD")
   const [Homes, setHomes] = useState<SingleHome[] | []>([])
   const [guesFavorite, setGuesFavorite] = useState<SingleHome[] | []>([])
-
+  const [destination, setDestination] = useState("")
+  const [selectedDay, setSelectedDay] = useState<string | null>(null)
+  const [selectedEnd, setSelectedEnd] = useState<string | null>(null)
   const formatPrice = (price: number) => {
     const rate = currencyList.find((r) => r.abr == currency)
     return !rate ? `$ ${price}` : `${rate?.signe} ${Math.floor(price * rate?.ratePerUSD)}`
@@ -77,7 +79,7 @@ export const AppProvider = ({ children }: Props) => {
     setGuesFavorite(prev => [...prev, home])
   }
 
-  const value = { guesFavorite, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const value = { selectedEnd, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}

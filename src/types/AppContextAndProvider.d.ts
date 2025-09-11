@@ -16,8 +16,14 @@ export type Currency = {
 export type AppContextType = {
   user: User | undefined;
   setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
-  currency: string;
+  currency: string; // the currency of the app
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
+  destination: string; // where user find home
+  setDestination: React.Dispatch<React.SetStateAction<string>>;
+  selectedDay: string | null; // when user come at home
+  setSelectedDay: React.Dispatch<React.SetStateAction<string | null>>;
+  selectedEnd: string | null; // when user wanna go
+  setSelectedEnd: React.Dispatch<React.SetStateAction<string | null>>;
   showCurrencySettings: boolean;
   setShowCurrencySettings: React.Dispatch<React.SetStateAction<boolean>>;
   currencyList: Currency[];
