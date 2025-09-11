@@ -1,4 +1,7 @@
+import { textResizer } from "@/utils/style";
 import { format } from "date-fns";
+import BtnPrimary from "../ux/BtnPrimary";
+import { Search } from "../Icons";
 
 interface Props {
     headerSearch: boolean,
@@ -42,7 +45,20 @@ function HeaderSearchLayoutOne({ headerSearch, selectedDay, selectEnd, setSelect
                 </button>
             </div>
             <BarLeft />
-
+            <div className="h-full pl-3 py-1 flex gap-2 items-center justify-center">
+                <span className="block text-sm font-semibold text-black cursor-pointer" onClick={() => setSelection("guests")}>
+                    {textResizer("Any Guest")}
+                </span>
+                <BtnPrimary rounded={true}
+                    style={{
+                        padding: "12px",
+                        background: "#ff385c",
+                        backgroundImage: "none!important",
+                    }}
+                    dark={false}>
+                    <Search />
+                </BtnPrimary>
+            </div>
         </div>
     )
 }

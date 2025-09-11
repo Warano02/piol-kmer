@@ -1,6 +1,6 @@
 import { classNames } from "@/utils/style";
 import { useRef } from "react";
-interface Props { dark: boolean, children: string, rounded: boolean }
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { dark: boolean, children: React.ReactNode, rounded: boolean }
 
 function BtnPrimary({ rounded = false, dark, children, ...rest }: Props) {
     const buttonRef = useRef<HTMLButtonElement>(null);
