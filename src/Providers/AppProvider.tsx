@@ -60,9 +60,10 @@ export const AppProvider = ({ children }: Props) => {
     //     profile: icon
     // }
     const [user, setUser] = useState<User | undefined>(undefined)
+    const [showPlaceFilter,setShowPlaceFilter]=useState(false)
     const [showCurrencySettings, setShowCurrencySettings] = useState(false)
     const [currency,setCurrency]=useState("USD")
-    const value = { user, setUser, showCurrencySettings,currencyList, currency,setCurrency, setShowCurrencySettings }
+    const value = { user, setUser,showPlaceFilter,setShowPlaceFilter, showCurrencySettings,currencyList, currency,setCurrency, setShowCurrencySettings }
 
     return <AppContext.Provider value={value}>
         {children}

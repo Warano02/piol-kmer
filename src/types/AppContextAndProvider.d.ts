@@ -1,3 +1,5 @@
+import type React from "react";
+
 export type User = {
   id: string;
   name: string;
@@ -18,6 +20,8 @@ export type AppContextType = {
   showCurrencySettings: boolean;
   setShowCurrencySettings: React.Dispatch<React.SetStateAction<boolean>>;
   currencyList: Currency[];
+  showPlaceFilter:boolean,
+  setShowPlaceFilter:React.Dispatch<React.SetStateAction<boolean>>
 };
 
 export type CurrencySettingsProps = {
