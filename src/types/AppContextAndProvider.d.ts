@@ -1,4 +1,5 @@
 import type React from "react";
+import type { SingleHome } from "./Components";
 
 export type User = {
   id: string;
@@ -6,11 +7,11 @@ export type User = {
   profile: string;
 };
 export type Currency = {
-  name: string
-  abr: string
-  signe: string
-  ratePerUSD: number
-}
+  name: string;
+  abr: string;
+  signe: string;
+  ratePerUSD: number;
+};
 
 export type AppContextType = {
   user: User | undefined;
@@ -20,8 +21,14 @@ export type AppContextType = {
   showCurrencySettings: boolean;
   setShowCurrencySettings: React.Dispatch<React.SetStateAction<boolean>>;
   currencyList: Currency[];
-  showPlaceFilter:boolean,
-  setShowPlaceFilter:React.Dispatch<React.SetStateAction<boolean>>
+  showPlaceFilter: boolean;
+  setShowPlaceFilter: React.Dispatch<React.SetStateAction<boolean>>;
+  formatPrice: (price: number) => string;
+  addGuesFavorite: (id: string) => void;
+  guesFavorite: SingleHome[];
+  Homes: SingleHome[];
+  setHomes: React.Dispatch<React.SetStateAction<SingleHome[]>>;
+  setGuesFavorite: React.Dispatch<React.SetStateAction<SingleHome[]>>;
 };
 
 export type CurrencySettingsProps = {

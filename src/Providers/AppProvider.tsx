@@ -1,5 +1,5 @@
 import { AppContext } from "@/context/AppContext"
-import type { User } from "@/types"
+import type { SingleHome, User } from "@/types"
 import { useState, type ReactNode } from "react"
 // import icon from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 type Props = { children: ReactNode }
@@ -54,18 +54,32 @@ const currencyList = [
 ];
 
 export const AppProvider = ({ children }: Props) => {
-    // const mockUser = {
-    //     id: "1225",
-    //     name: 'warano',
-    //     profile: icon
-    // }
-    const [user, setUser] = useState<User | undefined>(undefined)
-    const [showPlaceFilter,setShowPlaceFilter]=useState(false)
-    const [showCurrencySettings, setShowCurrencySettings] = useState(false)
-    const [currency,setCurrency]=useState("USD")
-    const value = { user, setUser,showPlaceFilter,setShowPlaceFilter, showCurrencySettings,currencyList, currency,setCurrency, setShowCurrencySettings }
+  // const mockUser = {
+  //     id: "1225",
+  //     name: 'warano',
+  //     profile: icon
+  // }
+  const [user, setUser] = useState<User | undefined>(undefined)
+  const [showPlaceFilter, setShowPlaceFilter] = useState(false)
+  const [showCurrencySettings, setShowCurrencySettings] = useState(false)
+  const [currency, setCurrency] = useState("USD")
+  const [Homes, setHomes] = useState<SingleHome[] | []>([])
+  const [guesFavorite, setGuesFavorite] = useState<SingleHome[] | []>([])
 
-    return <AppContext.Provider value={value}>
-        {children}
-    </AppContext.Provider>
+  const formatPrice = (price: number) => {
+    const rate = currencyList.find((r) => r.abr == currency)
+    return !rate ? `$ ${price}` : `${rate?.signe} ${Math.floor(price * rate?.ratePerUSD)}`
+  }
+
+  const addGuesFavorite = async (id: string) => {
+    const home = Homes.find(el => el.id === id)
+    if (!home) return
+    setGuesFavorite(prev => [...prev, home])
+  }
+
+  const value = { guesFavorite, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+
+  return <AppContext.Provider value={value}>
+    {children}
+  </AppContext.Provider>
 }
