@@ -66,8 +66,8 @@ export const AppProvider = ({ children }: Props) => {
   const [Homes, setHomes] = useState<SingleHome[] | []>([])
   const [guesFavorite, setGuesFavorite] = useState<SingleHome[] | []>([])
   const [destination, setDestination] = useState<string | null>("")
-  const [selectedDay, setSelectedDay] = useState<string | null>(null)
-  const [selectedEnd, setSelectedEnd] = useState<string | null>(null)
+  const [selectedDay, setSelectedDay] = useState<Date |string>("")
+  const [selectedEnd, setSelectedEnd] = useState<Date |string>("")
   const [guests, setGuests] = useState<GuestType>({ adults: 0, children: 0, infant: 0, pets: 0 })
   const formatPrice = (price: number) => {
     const rate = currencyList.find((r) => r.abr == currency)

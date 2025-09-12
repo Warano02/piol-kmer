@@ -1,3 +1,5 @@
+import type { DateSelector } from "./AppContextAndProvider";
+
 export type SingleHome = {
   src: string;
   price: number;
@@ -39,4 +41,18 @@ export interface GuestCardType extends GuestCardType {
 
 export interface GuessPickerType {
   css?: string;
+}
+export interface DatePickerType extends GuessPickerType {
+  footer?: boolean;
+}
+export interface CalendarButtonType extends DateSelector{
+  day: Date;
+  dayIdx: number;
+  hoveredDate: string | Date;
+  setHoveredDate: React.Dispatch<React.SetStateAction<string | Date>>;
+}
+export interface classNameInitType extends DateSelector {
+  hoveredDate: string|Date;
+  day: Date;
+  dayIdx: number;
 }

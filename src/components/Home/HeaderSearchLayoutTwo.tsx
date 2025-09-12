@@ -5,6 +5,7 @@ import { textResizer } from "@/utils/style";
 import BtnPrimary from "../ux/BtnPrimary";
 import GuestsPicker from "./GuestsPicker";
 import { useAppContext } from "@/hooks/useAppContext";
+import DatePicker from "./DatePicker";
 
 interface Props {
     headerSearch: boolean,
@@ -102,6 +103,13 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
                     <GuestsPicker css="" />
                 </div>
             )}
+            {(selection === "check-in" || selection === "check-out") && (
+                <div className="absolute top-full mt-2 max-w-[900px] w-full -translate-x-1/2 left-1/2">
+                    <DatePicker />
+                </div>
+            )}
+
+
         </div>
     )
 }

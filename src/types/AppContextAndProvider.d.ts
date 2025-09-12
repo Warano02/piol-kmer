@@ -13,17 +13,20 @@ export type Currency = {
   ratePerUSD: number;
 };
 
-export type AppContextType = {
+export interface DateSelector {
+  selectedDay: string | Date;
+  setSelectedDay: React.Dispatch<React.SetStateAction<string | Date>>;
+  selectedEnd: string | Date;
+  setSelectedEnd: React.Dispatch<React.SetStateAction<string | Date>>;
+}
+
+export interface AppContextType extends DateSelector {
   user: User | undefined;
   setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
   currency: string; // the currency of the app
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
   destination: string | null; // where user find home
   setDestination: React.Dispatch<React.SetStateAction<string | null>>;
-  selectedDay: string | null; // when user come at home
-  setSelectedDay: React.Dispatch<React.SetStateAction<string | null>>;
-  selectedEnd: string | null; // when user wanna go
-  setSelectedEnd: React.Dispatch<React.SetStateAction<string | null>>;
   showCurrencySettings: boolean;
   setShowCurrencySettings: React.Dispatch<React.SetStateAction<boolean>>;
   currencyList: Currency[];
@@ -38,7 +41,7 @@ export type AppContextType = {
   setGuests: React.Dispatch<React.SetStateAction<GuestType>>;
   guests: GuestType;
   result: string | null; // String notation of guest list
-};
+}
 
 export type CurrencySettingsProps = {
   name: string;
