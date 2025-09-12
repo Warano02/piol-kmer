@@ -1,5 +1,5 @@
 import type React from "react";
-import type { SingleHome } from "./Components";
+import type { GuestType, SingleHome } from "./Components";
 
 export type User = {
   id: string;
@@ -18,8 +18,8 @@ export type AppContextType = {
   setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
   currency: string; // the currency of the app
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
-  destination: string; // where user find home
-  setDestination: React.Dispatch<React.SetStateAction<string>>;
+  destination: string | null; // where user find home
+  setDestination: React.Dispatch<React.SetStateAction<string | null>>;
   selectedDay: string | null; // when user come at home
   setSelectedDay: React.Dispatch<React.SetStateAction<string | null>>;
   selectedEnd: string | null; // when user wanna go
@@ -35,6 +35,8 @@ export type AppContextType = {
   Homes: SingleHome[];
   setHomes: React.Dispatch<React.SetStateAction<SingleHome[]>>;
   setGuesFavorite: React.Dispatch<React.SetStateAction<SingleHome[]>>;
+  setGuests: React.Dispatch<React.SetStateAction<GuestType >>;
+  guests: GuestType;
 };
 
 export type CurrencySettingsProps = {

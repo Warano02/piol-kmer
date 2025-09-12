@@ -9,7 +9,7 @@ interface Props {
     selection: string | null,
     selectedDay: string | null,
     selectEnd: string | null,
-    destination: string
+    destination: string | null
 }
 
 export const BarLeft = () => <div className="h-[20px] w-1 block border-r border-borderColor"></div>
@@ -34,7 +34,7 @@ function HeaderSearchLayoutOne({ headerSearch, selectedDay, selectEnd, setSelect
             }}>
 
                 <button>
-                    <span className="block text-sm text-gray-700 font-semibold">
+                    <span className="block text-sm text-gray-700 font-semibold cursor-pointer">
                         {selectedDay && selectEnd
                             ? `${format(selectedDay, "MMM dd")} - ${format(
                                 selectEnd,

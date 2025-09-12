@@ -18,3 +18,19 @@ export type CustomImageProps = {
   className?: string;
   effect?: "zoom";
 };
+
+export interface GuestType {
+  children?: number;
+  pets?: number;
+  adults?: number;
+  infant?: number;
+}
+
+export interface GuestCardType extends GuestCardType {
+  operation: "add" | "minus";
+  type: "adults" | "children" | "pets";
+}
+
+export interface GuessPickerType {
+  css?: string;
+}

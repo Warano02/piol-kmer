@@ -1,5 +1,5 @@
 import { AppContext } from "@/context/AppContext"
-import type { SingleHome, User } from "@/types"
+import type { GuestType, SingleHome, User } from "@/types"
 import { useState, type ReactNode } from "react"
 // import icon from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 type Props = { children: ReactNode }
@@ -65,9 +65,10 @@ export const AppProvider = ({ children }: Props) => {
   const [currency, setCurrency] = useState("USD")
   const [Homes, setHomes] = useState<SingleHome[] | []>([])
   const [guesFavorite, setGuesFavorite] = useState<SingleHome[] | []>([])
-  const [destination, setDestination] = useState("")
+  const [destination, setDestination] = useState<string | null>("")
   const [selectedDay, setSelectedDay] = useState<string | null>(null)
   const [selectedEnd, setSelectedEnd] = useState<string | null>(null)
+  const [guests, setGuests] = useState<GuestType>({ adults: 0, children: 0, infant: 0, pets: 0 })
   const formatPrice = (price: number) => {
     const rate = currencyList.find((r) => r.abr == currency)
     return !rate ? `$ ${price}` : `${rate?.signe} ${Math.floor(price * rate?.ratePerUSD)}`
@@ -79,7 +80,7 @@ export const AppProvider = ({ children }: Props) => {
     setGuesFavorite(prev => [...prev, home])
   }
 
-  const value = { selectedEnd, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const value = { selectedEnd, guests, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}

@@ -9,6 +9,7 @@ import { useState } from "react"
 
 import SemiHeader from "./SemiHeader"
 import HeaderSearchLayoutOne from "./HeaderSearchLayoutOne"
+import HeaderSearchLayoutTwo from "./HeaderSearchLayoutTwo"
 function Header() {
     const { user, setShowCurrencySettings } = useAppContext()
     const [menu, setMenu] = useState(false)
@@ -81,7 +82,7 @@ function Li({ text, icon, to }: { text: string, icon: IconDefinition | undefined
 }
 
 function HeaderMainSection() {
-    const { showPlaceFilter, destination, selectedDay, selectedEnd } = useAppContext()
+    const { showPlaceFilter, destination,setDestination, selectedDay, selectedEnd } = useAppContext()
     const [selection, setSelection] = useState<string | null>(null)
     if (!showPlaceFilter) {
         return <header className="h-10  rounded-2xl border-1 font-stretch-110% border-white shadow flex justify-around items-center gap-1 relative px-2 font-medium hover:shadow-xl transition-all">
@@ -115,7 +116,7 @@ function HeaderMainSection() {
                 transform: "translate(-50%, -50%)",
             }}>
             <HeaderSearchLayoutOne selectEnd={selectedEnd} selectedDay={selectedDay} headerSearch={showPlaceFilter} setSelection={setSelection} selection={selection} destination={destination} />
-
+            <HeaderSearchLayoutTwo selectEnd={selectedEnd} selectedDay={selectedDay} headerSearch={showPlaceFilter} setSelection={setSelection} selection={selection} destination={destination} setDestination={setDestination} />
         </div>
     </>
 }
