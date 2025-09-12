@@ -35,8 +35,9 @@ export type AppContextType = {
   Homes: SingleHome[];
   setHomes: React.Dispatch<React.SetStateAction<SingleHome[]>>;
   setGuesFavorite: React.Dispatch<React.SetStateAction<SingleHome[]>>;
-  setGuests: React.Dispatch<React.SetStateAction<GuestType >>;
+  setGuests: React.Dispatch<React.SetStateAction<GuestType>>;
   guests: GuestType;
+  result: string | null; // String notation of guest list
 };
 
 export type CurrencySettingsProps = {

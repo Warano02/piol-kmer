@@ -26,6 +26,12 @@ export interface GuestType {
   infant?: number;
 }
 
+export type Menu1Type = {
+  type: "adults" | "children" | "pets";
+  title: string;
+  text: string;
+};
+
 export interface GuestCardType extends GuestCardType {
   operation: "add" | "minus";
   type: "adults" | "children" | "pets";

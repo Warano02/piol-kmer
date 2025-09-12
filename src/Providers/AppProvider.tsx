@@ -80,7 +80,9 @@ export const AppProvider = ({ children }: Props) => {
     setGuesFavorite(prev => [...prev, home])
   }
 
-  const value = { selectedEnd, guests, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const result = guests.adults! > 0 ? `${guests.adults} Adult, ${guests.children} Children.` : null
+
+  const value = { result, selectedEnd, guests, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}

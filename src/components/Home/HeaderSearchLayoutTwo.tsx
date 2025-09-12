@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { textResizer } from "@/utils/style";
 import BtnPrimary from "../ux/BtnPrimary";
 import GuestsPicker from "./GuestsPicker";
+import { useAppContext } from "@/hooks/useAppContext";
 
 interface Props {
     headerSearch: boolean,
@@ -17,6 +18,7 @@ interface Props {
 
 function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, selection, destination, selectEnd, setDestination }: Props) {
     const inputElement = useRef(null);
+    const { result } = useAppContext()
     return (
         <div style={{
             top: "50%",
@@ -87,7 +89,7 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
                     }}>
                     <p className="text-sm mb-1 font-medium">Who</p>
                     <p className="text-gray-500 text-md w-max">
-                        {textResizer("Any Guest", 12) || "Any Guest"}
+                        {textResizer(result || "Any Guest", 12) || "Any Guest"}
                     </p>
                 </div>
                 <BtnPrimary rounded={true} dark={false}>
