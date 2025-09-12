@@ -44,15 +44,19 @@ export interface GuessPickerType {
 }
 export interface DatePickerType extends GuessPickerType {
   footer?: boolean;
+  selection: "check-in" | "check-out";
 }
-export interface CalendarButtonType extends DateSelector{
+export interface CalendarButtonType extends DateSelector {
   day: Date;
   dayIdx: number;
   hoveredDate: string | Date;
+  selection: "check-in" | "check-out";
   setHoveredDate: React.Dispatch<React.SetStateAction<string | Date>>;
 }
-export interface classNameInitType extends DateSelector {
-  hoveredDate: string|Date;
+export interface classNameInitType {
+  hoveredDate: string | Date;
   day: Date;
   dayIdx: number;
+  selectedEnd: string | Date;
+  selectedDay: string | Date;
 }

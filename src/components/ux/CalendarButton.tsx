@@ -1,26 +1,38 @@
+import { useAppContext } from "@/hooks/useAppContext";
 import type { CalendarButtonType } from "@/types"
 import { classNameInit, classNames } from "@/utils/style"
 import { format, isBefore, isEqual, isPast, isToday } from "date-fns";
 
-function CalendarButton({ selectedDay, setSelectedDay, selectedEnd, setSelectedEnd, day, dayIdx, hoveredDate, setHoveredDate, }: CalendarButtonType) {
+function CalendarButton({ day, dayIdx, selection, hoveredDate, setHoveredDate, }: CalendarButtonType) {
+    const { selectedDay, setSelectedDay, selectedEnd, setSelectedEnd } = useAppContext()
     return (
-        <div key={day?.toString()} className={classNameInit({ setSelectedDay,setSelectedEnd, hoveredDate, selectedEnd, selectedDay, day, dayIdx })}>
+        <div key={day?.toString()} className={classNameInit({ hoveredDate, selectedEnd, selectedDay, day, dayIdx })}>
             <button
                 type="button"
                 onMouseMove={() => setHoveredDate(day)}
                 disabled={isPast(day) && !isToday(day) ? true : false}
-                onClick={async () => {
-                    if (selectedDay === null) setSelectedDay(day);
-
-                    if (isBefore(day, selectedDay)) {
-                        await setSelectedDay(day);
-                        await setSelectedEnd("");
+                onClick={() => {
+                    if (selection === "check-in") {
+                        setSelectedDay(day);
+                        setSelectedEnd("");
                     } else {
-                        if (selectedDay && !isEqual(day, selectedDay)) {
-                            await setSelectedEnd(day);
+                        if (!selectedDay) {
+                            setSelectedDay(day);
+                            setSelectedEnd("");
+                            return;
+                        }
+                        if (isBefore(day, selectedDay)) {
+                            setSelectedDay(day);
+                            setSelectedEnd("");
+                            return;
+                        }
+
+                        if (!isEqual(day, selectedDay)) {
+                            setSelectedEnd(day);
                         }
                     }
                 }}
+
                 className={classNames(
                     selectedEnd !== null &&
                     isEqual(day, selectedEnd) &&

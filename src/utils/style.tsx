@@ -1,4 +1,4 @@
-import type { classNameInitType } from "@/types";
+import type {  classNameInitType } from "@/types";
 import { getDay, isAfter, isBefore, isEqual } from "date-fns";
 
 export const classNames = (...classes: (string | number | false | null | undefined)[]): string => {
@@ -25,30 +25,28 @@ const colStartClasses = [
 
 export const classNameInit = ({
   hoveredDate,
-  setSelectedEnd,
+  selectedEnd,
   selectedDay,
   day,
   dayIdx,
 }: classNameInitType) => {
   return classNames(
     hoveredDate !== null &&
-    setSelectedEnd === null &&
+    selectedEnd === null &&
     selectedDay !== null &&
     (isEqual(selectedDay, day) || isAfter(day, selectedDay)) &&
     isAfter(hoveredDate, day) &&
     "bg-zinc-100",
 
     isEqual(selectedDay, day) && "date-gradient-start",
-    // @ts-expect-error The code is already running
-    isEqual(setSelectedEnd, day) && "date-gradient-end",
+    isEqual(selectedEnd, day) && "date-gradient-end",
 
-    selectedDay && !setSelectedEnd && isEqual(day, hoveredDate) && "bg-zinc-100",
+    selectedDay && !selectedEnd && isEqual(day, hoveredDate) && "bg-zinc-100",
 
     selectedDay &&
     (isEqual(day, selectedDay) || isAfter(day, selectedDay)) &&
-    setSelectedEnd &&
-    // @ts-expect-error The code is already running
-    (isEqual(day, setSelectedEnd) || isBefore(day, setSelectedEnd)) &&
+    selectedEnd &&
+    (isEqual(day, selectedEnd) || isBefore(day, selectedEnd)) &&
     "bg-zinc-100",
 
     dayIdx === 0 && colStartClasses[getDay(day)],

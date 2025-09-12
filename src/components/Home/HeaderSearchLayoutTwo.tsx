@@ -105,7 +105,7 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
             )}
             {(selection === "check-in" || selection === "check-out") && (
                 <div className="absolute top-full mt-2 max-w-[900px] w-full -translate-x-1/2 left-1/2">
-                    <DatePicker />
+                    <DatePicker selection={selection} />
                 </div>
             )}
 

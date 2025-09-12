@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import CalendarButton from "../ux/CalendarButton";
 import { useAppContext } from "@/hooks/useAppContext";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-function DatePicker({ css }: DatePickerType) {
+function DatePicker({ css, selection }: DatePickerType) {
     const { selectedDay, selectedEnd, setSelectedEnd, setSelectedDay } = useAppContext()
     const today = startOfToday();
     const Days = ["S", "M", "T", "W", "T", "F", "S"]
@@ -59,6 +59,7 @@ function DatePicker({ css }: DatePickerType) {
                             return (
                                 <CalendarButton
                                     key={uuidv4()}
+                                    selection={selection}
                                     selectedDay={selectedDay}
                                     setSelectedDay={setSelectedDay}
                                     selectedEnd={selectedEnd}
@@ -73,56 +74,57 @@ function DatePicker({ css }: DatePickerType) {
                             );
                         })}
                     </div>
-                   
-                </div>
-                 {/**Month +1 */}
-                    <div className="w-full">
-                        <div className="flex items-center">
-                            <h2 className="flex-auto font-semibold text-gray-900 text-center">
-                                {format(nextMonthState, "MMM-yyyy")}
-                            </h2>
 
-                            <button
-                                type="button"
-                                onClick={previousMonth}
-                                className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
-                            >
-                                <span className="sr-only">Previous month</span>
-                                <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
-                            </button>
-                            <button
-                                onClick={nextMonth}
-                                type="button"
-                                className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
-                            >
-                                <span className="sr-only">Next month</span>
-                                <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-                            </button>
-                        </div>
-                        <div className="grid grid-cols-7 mt-10 text-xs leading-6 font-semibold text-center text-gray-500">
-                            {Days.map((day) => (
-                                <div key={uuidv4()}>{day}</div>
-                            ))}
-                        </div>
-                        <div className="grid grid-cols-7 mt-2 text-sm">
-                            {nextMonthDays.map((day, dayIdx) => {
-                                return (
-                                    <CalendarButton
-                                        selectedDay={selectedDay}
-                                        setSelectedDay={setSelectedDay}
-                                        selectedEnd={selectedEnd}
-                                        setSelectedEnd={setSelectedEnd}
-                                        // firstDayCurrentMonth={firstDayCurrentMonth}
-                                        day={day}
-                                        key={uuidv4()}
-                                        dayIdx={dayIdx}
-                                        setHoveredDate={setHoveredDate}
-                                        hoveredDate={hoveredDate}
-                                    />
-                                );
-                            })}
-                        </div>
+                </div>
+                {/**Month +1 */}
+                <div className="w-full">
+                    <div className="flex items-center">
+                        <h2 className="flex-auto font-semibold text-gray-900 text-center">
+                            {format(nextMonthState, "MMM-yyyy")}
+                        </h2>
+
+                        <button
+                            type="button"
+                            onClick={previousMonth}
+                            className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+                        >
+                            <span className="sr-only">Previous month</span>
+                            <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+                        </button>
+                        <button
+                            onClick={nextMonth}
+                            type="button"
+                            className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+                        >
+                            <span className="sr-only">Next month</span>
+                            <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+                        </button>
                     </div>
+                    <div className="grid grid-cols-7 mt-10 text-xs leading-6 font-semibold text-center text-gray-500">
+                        {Days.map((day) => (
+                            <div key={uuidv4()}>{day}</div>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-7 mt-2 text-sm">
+                        {nextMonthDays.map((day, dayIdx) => {
+                            return (
+                                <CalendarButton
+                                    selection={selection}
+                                    selectedDay={selectedDay}
+                                    setSelectedDay={setSelectedDay}
+                                    selectedEnd={selectedEnd}
+                                    setSelectedEnd={setSelectedEnd}
+                                    // firstDayCurrentMonth={firstDayCurrentMonth}
+                                    day={day}
+                                    key={uuidv4()}
+                                    dayIdx={dayIdx}
+                                    setHoveredDate={setHoveredDate}
+                                    hoveredDate={hoveredDate}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
         </div>
     )

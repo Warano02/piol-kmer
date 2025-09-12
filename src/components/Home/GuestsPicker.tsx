@@ -69,8 +69,8 @@ function GuestsPicker({ css }: GuessPickerType) {
         <div className={`${css ||
             "w-full rounded-3xl bg-white relative z-10 px-8 py-2 shadow border border-borderColor"
             }`}>
-            {menu.map((el) => (
-                <div className="flex items-center justify-between my-6">
+            {menu.map((el,i) => (
+                <div key={i} className="flex items-center justify-between my-6">
                     <div>
                         <h6 className="text-md font-medium">{el.title} </h6>
                         <p className="text-sm font-normal text-gray-600 mt-1">
