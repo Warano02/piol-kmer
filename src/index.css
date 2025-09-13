@@ -167,7 +167,9 @@
 .custom-shadow {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px 9px;
 }
-
+.bg-transparent{
+  background: #63626213;
+}
 .hidden-scroll-bar::-webkit-scrollbar {
   width: 0;
 }

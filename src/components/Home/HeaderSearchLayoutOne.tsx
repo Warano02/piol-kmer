@@ -18,7 +18,7 @@ interface Props {
 export const BarLeft = () => <div className="h-[20px] w-1 block border-r border-borderColor"></div>
 
 function HeaderSearchLayoutOne({ headerSearch, selectedDay, selectEnd, setSelection, destination, setOverlay }: Props) {
-    const {result}=useAppContext()
+    const { result } = useAppContext()
     const seterAll = (selection: string): void => {
         if (!headerSearch) setOverlay(true)
         setSelection(selection)
@@ -30,7 +30,7 @@ function HeaderSearchLayoutOne({ headerSearch, selectedDay, selectEnd, setSelect
             <div className="h-full px-3 py-1 flex gap-1 items-center" onClick={() => seterAll("destination")}>
                 <img src={homeImg} alt="Image of home" width={40} />
                 <span className="block text-sm text-gray-700 font-semibold cursor-pointer">
-                    {destination || "Anywhere"}
+                    {textResizer(destination || "", "Ngaounderer".length) || "Anywhere"}
                 </span>
                 <BarLeft />
             </div>
@@ -50,7 +50,7 @@ function HeaderSearchLayoutOne({ headerSearch, selectedDay, selectEnd, setSelect
             <BarLeft />
             <div className="h-full pl-3 py-1 flex gap-2 items-center justify-center">
                 <span className="block text-sm font-semibold text-black cursor-pointer" onClick={() => seterAll("guests")}>
-                    {textResizer(result||"Any Guest",13)}
+                    {textResizer(result || "Any Guest", 13)}
                 </span>
                 <BtnPrimary rounded={true}
                     style={{

@@ -2,7 +2,7 @@
 function SemiHeader({ headerSearch }: { headerSearch: boolean }) {
     return (
         <div
-            className={`${headerSearch ? "semi_header_active" : "semi_header_inactive"
+            className={`${headerSearch ? "semi_header_active" : "semi_header_inactive z-50"
                 }`}
         >
             <div className="flex h-full gap-4 mx-auto">

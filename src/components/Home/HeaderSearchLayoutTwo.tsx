@@ -50,8 +50,9 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
                     value={destination || ""}
                     onChange={(e) => setDestination(e.target.value)}
                     placeholder="Search Destinations"
-                    className="outline-none w-max block px-2 text-md rounded-full bg-transparent"
+                    className={`outline-none w-max block px-2 text-md rounded-full ${selection==="destination"?"bg-white":""}`}
                 />
+              
             </div>
             <BarLeft />
             <div onClick={() => setSelection((prev) => (prev === "check-in" ? "" : "check-in"))}

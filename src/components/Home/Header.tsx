@@ -51,7 +51,7 @@ function Header({ width = "container" }: Props) {
         }
     ]
     return (
-        <div className={`sticky  px-8 ${!overlay ? "bg-white-secondary" : "bg-white"} flex justify-between items-center z-50`}>
+        <div className={`sticky  px-8 ${!overlay ? "bg-white-secondary" : "bg-gray"} flex justify-between items-center z-50`}>
             <div className={`w-full xl:${width} relative mx-auto py-2 md:py-5 flex items-center justify-between`}>
                 <Logo />
                 <HeaderMainSection overlay={overlay} setOverlay={setOverlay} selection={selection} setSelection={setSelection} />
@@ -77,7 +77,7 @@ function Header({ width = "container" }: Props) {
 
             {overlay && (
                 <div
-                    className="fixed top-0 left-0 w-full h-full z-10 bg-[#9999992d] bg-opacity-40"
+                    className="fixed top-0 left-0 w-full h-full z-10 bg-[#22222217] bg-opacity-40"
                     onClick={() => {
                         setSelection(null);
                         setOverlay(false);
@@ -107,14 +107,14 @@ function HeaderMainSection({ overlay, setOverlay, selection, setSelection }: Pro
     const { destination, setDestination, selectedDay, selectedEnd } = useAppContext()
 
     return <>
-        <SemiHeader headerSearch={overlay} />
-        <div className="absolute z-30 hidden lg:block w-full"
+        <SemiHeader headerSearch={!overlay} />
+        <div className="absolute z-20 hidden lg:block w-full"
             style={{
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
             }}>
-            <HeaderSearchLayoutOne setOverlay={setOverlay} selectEnd={selectedEnd} selectedDay={selectedDay} headerSearch={overlay} setSelection={setSelection} selection={selection} destination={destination} />
+            <HeaderSearchLayoutOne setOverlay={setOverlay} selectEnd={selectedEnd} selectedDay={selectedDay} headerSearch={false} setSelection={setSelection} selection={selection} destination={destination} />
             <HeaderSearchLayoutTwo selectEnd={selectedEnd} selectedDay={selectedDay} headerSearch={overlay} setSelection={setSelection} selection={selection} destination={destination} setDestination={setDestination} />
         </div>
     </>
