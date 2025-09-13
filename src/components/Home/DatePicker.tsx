@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import CalendarButton from "../ux/CalendarButton";
 import { useAppContext } from "@/hooks/useAppContext";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+
 function DatePicker({ css, selection }: DatePickerType) {
     const { selectedDay, selectedEnd, setSelectedEnd, setSelectedDay } = useAppContext()
     const today = startOfToday();

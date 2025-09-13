@@ -12,9 +12,9 @@ interface Props {
     setSelection: React.Dispatch<React.SetStateAction<string | null>>,
     selection: string | null,
     destination: string | null,
-    selectedDay: string | null,
+    selectedDay: string | Date,
     setDestination: (place: string | null) => void,
-    selectEnd: string | null
+    selectEnd: string | Date
 }
 
 function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, selection, destination, selectEnd, setDestination }: Props) {
@@ -54,9 +54,7 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
                 />
             </div>
             <BarLeft />
-            <div onClick={() => {
-                setSelection((prev) => (prev === "check-in" ? "" : "check-in"));
-            }}
+            <div onClick={() => setSelection((prev) => (prev === "check-in" ? "" : "check-in"))}
                 className={`rounded-full relative px-7 min-w-[144px] py-2 cursor-pointer select-none flex flex-col justify-start ${selection === "check-in"
                     ? "bg-white shadow-xl"
                     : "bg-transparent hover:bg-borderColor"
@@ -67,9 +65,7 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
                 </p>
             </div>
             <BarLeft />
-            <div onClick={() => {
-                setSelection((prev) => (prev === "check-out" ? null : "check-out"));
-            }}
+            <div onClick={() => setSelection((prev) => (prev === "check-out" ? null : "check-out"))}
                 className={`rounded-full relative px-7 min-w-[150px] w-max py-2 cursor-pointer select-none flex flex-col justify-start ${selection === "check-out"
                     ? "bg-white shadow-xl"
                     : " bg-transparent hover:bg-borderColor"
@@ -85,9 +81,7 @@ function HeaderSearchLayoutTwo({ headerSearch, selectedDay, setSelection, select
                 : "bg-transparent hover:bg-borderColor"
                 }`}>
                 <div className="w-[84px] flex flex-col justify-start"
-                    onClick={() => {
-                        setSelection((prev) => (prev === "guests" ? null : "guests"));
-                    }}>
+                    onClick={() => setSelection((prev) => (prev === "guests" ? null : "guests"))}>
                     <p className="text-sm mb-1 font-medium">Who</p>
                     <p className="text-gray-500 text-md w-max">
                         {textResizer(result || "Any Guest", 12) || "Any Guest"}
