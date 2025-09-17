@@ -1,12 +1,14 @@
 import { useRef } from "react";
-import data from "@/mocks/houses.json"
 import SingleHouse from "./SingleHouse";
 import { Link } from "react-router-dom";
 import { ArrayLeftHome, ArrayRightHome } from "../Icons";
-function HouseCarrousel({ city = "Younde" }) {
+import type { Houses } from "@/types";
+interface Props {
+  city?: string,
+  Houses: Houses[]
+}
+function HouseCarrousel({ city = "Younde", Houses }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const o = data[0]
-  const Houses = Array.from({ length: 50 }, () => { return { ...o, _id: o._id + "d11d" + Math.random() } })
   const scroll = (dir: 'left' | "right") => {
     if (!scrollRef.current) return;
     const amount = 300;

@@ -4,24 +4,19 @@ import Header from "@/components/Home/Header"
 import HouseCarrousel from "@/components/Home/HouseCarrousel"
 // import SingleHouse from "@/components/Home/SingleHouse"
 import { useAppContext } from "@/hooks/useAppContext"
-// import MockHouse from "@/mocks/houses.json"
+import MockHouse from "@/mocks/houses.json"
 // import type { SingleHome } from "@/types"
 // import { useState } from "react"
-// //mock
+
 // import icon from "@/assets/icon/icon.png"
 
 
 function Home() {
-  
+
   const { showCurrencySettings } = useAppContext()
-  // const [data] = useState<SingleHome[] | undefined>(Array.from({length:50}, () => {
-  //   return {
-  //     id: "d4d5f",
-  //     src: icon,
-  //     price: 200,
-  //     title: "Condo in Yaounde"
-  //   }
-  // }))
+  const o = MockHouse[0]
+  const Houses = Array.from({ length: 50 }, () => { return { ...o, _id: o._id + "d11d" + Math.random() } })
+
   // const [data, setData] = useState<Houses | undefined>(undefined)
   // const [isLoading,setIsLoading]=useState(true)
 
@@ -30,8 +25,8 @@ function Home() {
       {showCurrencySettings && <CurrencySettings />}
       <Header width="200" />
       {/* <SingleHouse data={MockHouse[0]}/> */}
-      <HouseCarrousel/>
-      <Footer/> 
+      <HouseCarrousel Houses={Houses} />
+      <Footer />
     </div>
   )
 }
