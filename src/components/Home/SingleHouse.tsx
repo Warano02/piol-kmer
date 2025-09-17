@@ -4,7 +4,7 @@ import type { Houses } from "@/types"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-function SingleHouse(data: Houses) {
+function SingleHouse({data}:{data: Houses}) {
     const { formatPrice, whiteList, setShowWhiteListCreator } = useAppContext()
     const [house, setHouse] = useState<Houses>()
     const addToFavorite = async (id: string) => {
