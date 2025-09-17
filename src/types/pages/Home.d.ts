@@ -11,5 +11,7 @@ export interface Houses {
   isFavorite: boolean;
   guestFavorite: boolean;
   rating: number;
+  icon: string;
+  price: number;
   images: Images[];
 }

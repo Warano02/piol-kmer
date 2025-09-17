@@ -1,13 +1,4 @@
 import type { DateSelector } from "./AppContextAndProvider";
-
-export type SingleHome = {
-  src: string;
-  price: number;
-  title: string;
-  id: string;
-  favName?: string; // Is useFull if Home is favorite
-};
-
 export type CarrouselImagesProps = {
   title: string;
   link: string;

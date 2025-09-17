@@ -1,5 +1,5 @@
 import { AppContext } from "@/context/AppContext"
-import type { GuestType, SingleHome, User, WhiteList } from "@/types"
+import type { GuestType, Houses, User, WhiteList } from "@/types"
 import { useState, type ReactNode } from "react"
 // import icon from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 type Props = { children: ReactNode }
@@ -63,8 +63,8 @@ export const AppProvider = ({ children }: Props) => {
   const [showPlaceFilter, setShowPlaceFilter] = useState(true)
   const [showCurrencySettings, setShowCurrencySettings] = useState(false)
   const [currency, setCurrency] = useState("USD")
-  const [Homes, setHomes] = useState<SingleHome[] | []>([])
-  const [guesFavorite, setGuesFavorite] = useState<SingleHome[] | []>([])
+  const [Homes, setHomes] = useState<Houses[] | []>([])
+  const [guesFavorite, setGuesFavorite] = useState<Houses[] | []>([])
   const [destination, setDestination] = useState<string | null>("")
   const [selectedDay, setSelectedDay] = useState<Date | string>(new Date())
   const [selectedEnd, setSelectedEnd] = useState<Date | string>("")
@@ -77,7 +77,7 @@ export const AppProvider = ({ children }: Props) => {
   }
 
   const addGuesFavorite = async (id: string) => {
-    const home = Homes.find(el => el.id === id)
+    const home = Homes.find(el => el._id === id)
     if (!home) return
     setGuesFavorite(prev => [...prev, home])
   }
