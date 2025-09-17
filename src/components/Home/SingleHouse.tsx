@@ -2,6 +2,7 @@ import Data from "@/mocks/houses.json"
 import { HeartSvg, RateStars } from "../Icons"
 import { useAppContext } from "@/hooks/useAppContext"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 function SingleHouse() {
     const { formatPrice, whiteList, setShowWhiteListCreator } = useAppContext()
     const [house, setHouse] = useState(Data[0])
@@ -19,7 +20,7 @@ function SingleHouse() {
         }
     }
     return (
-        <div className="ml-4 relative w-[211px] h-[252px] ">
+        <Link to={`/rooms/${house._id}`} className="ml-4 relative w-[211px] h-[252px] ">
             <div className="relative w-full h-[195px]">
                 <img src={house.icon || house.images[0].urls[0]} alt="" className="absolute h-full object-cover rounded-3xl" />
                 <div className="relative w-full h-[40px]  z-1 flex items-center px-3 ">
@@ -29,7 +30,7 @@ function SingleHouse() {
                         </div>
                     }
 
-                    <button className="absolute right-5 cursor-pointer w-8 h-8 " type="button" onClick={() => addToFavorite(house._id)}>
+                    <button className="absolute right-5 cursor-pointer w-8 h-8 " type="button" onClick={(e) => {e.preventDefault();addToFavorite(house._id)}}>
                         <HeartSvg className={`hover:scale-95 ${house.isFavorite ? "text-primary" : "text-[#242322c2]"} `} />
                     </button>
                 </div>
@@ -45,7 +46,7 @@ function SingleHouse() {
                     <span >{house.rating?.toFixed(1) || 2.0} </span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
