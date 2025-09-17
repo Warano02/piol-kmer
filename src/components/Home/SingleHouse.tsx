@@ -1,9 +1,23 @@
 import Data from "@/mocks/houses.json"
 import { HeartSvg, RateStars } from "../Icons"
 import { useAppContext } from "@/hooks/useAppContext"
+import { useState } from "react"
 function SingleHouse() {
-    const house = Data[0]
-    const { formatPrice } = useAppContext()
+    const { formatPrice, whiteList, setShowWhiteListCreator } = useAppContext()
+    const [house, setHouse] = useState(Data[0])
+    const addToFavorite = async (id: string) => {
+        setHouse((prev) => ({ ...prev, isFavorite: !prev.isFavorite }))
+        try {
+            if (!whiteList) return setShowWhiteListCreator(true)
+            const ListOfIds = whiteList[0].elements
+            const action = ListOfIds.includes(id) ? "remove" : "add"
+            console.log(action);
+            // simulate sending request to the api
+
+        } catch (e) {
+            console.log("Error while executing favorite action " + e)
+        }
+    }
     return (
         <div className="ml-4 relative w-[211px] h-[252px] ">
             <div className="relative w-full h-[195px]">
@@ -15,7 +29,7 @@ function SingleHouse() {
                         </div>
                     }
 
-                    <button className="absolute right-5 cursor-pointer w-8 h-8 ">
+                    <button className="absolute right-5 cursor-pointer w-8 h-8 " type="button" onClick={() => addToFavorite(house._id)}>
                         <HeartSvg className={`hover:scale-95 ${house.isFavorite ? "text-primary" : "text-[#242322c2]"} `} />
                     </button>
                 </div>

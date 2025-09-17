@@ -1,5 +1,5 @@
 import { AppContext } from "@/context/AppContext"
-import type { GuestType, SingleHome, User } from "@/types"
+import type { GuestType, SingleHome, User, WhiteList } from "@/types"
 import { useState, type ReactNode } from "react"
 // import icon from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 type Props = { children: ReactNode }
@@ -66,9 +66,11 @@ export const AppProvider = ({ children }: Props) => {
   const [Homes, setHomes] = useState<SingleHome[] | []>([])
   const [guesFavorite, setGuesFavorite] = useState<SingleHome[] | []>([])
   const [destination, setDestination] = useState<string | null>("")
-  const [selectedDay, setSelectedDay] = useState<Date |string>(new Date())
-  const [selectedEnd, setSelectedEnd] = useState<Date |string>("")
+  const [selectedDay, setSelectedDay] = useState<Date | string>(new Date())
+  const [selectedEnd, setSelectedEnd] = useState<Date | string>("")
   const [guests, setGuests] = useState<GuestType>({ adults: 0, children: 0, infant: 0, pets: 0 })
+  const [whiteList, setWhiteList] = useState<WhiteList>(null)
+  const [showWhiteListCreator, setShowWhiteListCreator] = useState(false)
   const formatPrice = (price: number) => {
     const rate = currencyList.find((r) => r.abr == currency)
     return !rate ? `$ ${price}` : `${rate?.signe} ${Math.floor(price * rate?.ratePerUSD)}`
@@ -80,9 +82,21 @@ export const AppProvider = ({ children }: Props) => {
     setGuesFavorite(prev => [...prev, home])
   }
 
+  const createWhiteList = async (name: string) => {
+    try {
+      setWhiteList((prev) => {
+        if (!prev) return [{ name, elements: [] }]
+        return [...prev, { name, elements: [] }]
+      })
+    } catch (e) {
+      console.log("Error occured when trying to Create List " + e)
+    }
+  }
+
+
   const result = guests.adults! > 0 ? `${guests.adults} Adult, ${guests.children} Children.` : null
 
-  const value = { result, selectedEnd, guests, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const value = { result, selectedEnd,showWhiteListCreator,setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}

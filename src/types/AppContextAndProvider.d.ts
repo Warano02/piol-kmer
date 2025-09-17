@@ -19,6 +19,12 @@ export interface DateSelector {
   selectedEnd: string | Date;
   setSelectedEnd: React.Dispatch<React.SetStateAction<string | Date>>;
 }
+type WhiteListElement = {
+  name: string;
+  elements: string[];
+};
+
+export type WhiteList = WhiteListElement[] | null;
 
 export interface AppContextType extends DateSelector {
   user: User | undefined;
@@ -29,6 +35,10 @@ export interface AppContextType extends DateSelector {
   setDestination: React.Dispatch<React.SetStateAction<string | null>>;
   showCurrencySettings: boolean;
   setShowCurrencySettings: React.Dispatch<React.SetStateAction<boolean>>;
+  whiteList: WhiteList;
+  setWhiteList: React.Dispatch<React.SetStateAction<WhiteList>>;
+  currencyList: Currency[];
+  setShowWhiteListCreator: React.Dispatch<React.SetStateAction<boolean>>;
   currencyList: Currency[];
   showPlaceFilter: boolean;
   setShowPlaceFilter: React.Dispatch<React.SetStateAction<boolean>>;
@@ -50,3 +60,4 @@ export type CurrencySettingsProps = {
   isSelected: boolean;
   onClick: () => void;
 };
+
