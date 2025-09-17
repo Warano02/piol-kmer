@@ -1,7 +1,8 @@
-// import CarrouselImages from "@/components/Home/CarrouselImages"
 import CurrencySettings from "@/components/Home/CurrencySettings"
- import Header from "@/components/Home/Header"
- import { useAppContext } from "@/hooks/useAppContext"
+import Header from "@/components/Home/Header"
+import SingleHouse from "@/components/Home/SingleHouse"
+import { useAppContext } from "@/hooks/useAppContext"
+
 // import type { SingleHome } from "@/types"
 // import { useState } from "react"
 // //mock
@@ -9,6 +10,7 @@ import CurrencySettings from "@/components/Home/CurrencySettings"
 
 
 function Home() {
+  
   const { showCurrencySettings } = useAppContext()
   // const [data] = useState<SingleHome[] | undefined>(Array.from({length:50}, () => {
   //   return {
@@ -18,11 +20,14 @@ function Home() {
   //     title: "Condo in Yaounde"
   //   }
   // }))
+  // const [data, setData] = useState<Houses | undefined>(undefined)
+  // const [isLoading,setIsLoading]=useState(true)
+
   return (
     <div className="flex flex-col gap-1">
       {showCurrencySettings && <CurrencySettings />}
       <Header width="200" />
-      {/* <CarrouselImages title="Stay Near" link="/homes/near" data={data} /> */}
+      <SingleHouse/>
     </div>
   )
 }

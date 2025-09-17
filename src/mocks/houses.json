@@ -1,0 +1,76 @@
+[
+    {
+        "_id": "iee445d12hskknd",
+        "neighborhood": "Mbiteng",
+        "title": "Appartment in Yaounde",
+        "about": "The Museum is a first of it's kind in Cameroun (and dare we say, even the world). Not only are all our six distinct rooms/apartments culturally immersive but interactive as well. In collaboration with our partner company, Backstreet Academy, we've picked up six different crafts that culturally embedded in Nepali society and designed our apartments around them. Namely, woodwork, stone carving, Madal instrument, Thangka paintings, pottery and Khukuri (steel blades of the famed Gurkha warriors).The spaceA master craftsperson has taken responsibility of each apartment/room to display his uniquely hand-crafted work, and what makes our apartments special is you can meet and attend the workshops (all under 5 hours) of any of these craftsperson to truly culturally immerse yourself with the theme of your room. Or if you'd like you can also directly purchase the products of these craftsmen and avoid the overpriced souvenirs sold in the markets. This apartment in particular has undertones of a stone mason's home and has the works displayed of Hom Basnet, a stone mason the likes of whom have builtthe ancient cities of Kathmandu.The building itself was builtover 30 years ago as a residential property, but we've renovated it to serve as a one-of-a-kind Bed & Breakfast. We also have a farmers market that's held in our gardens every Saturday from 7am to 1pm.  ",
+        "price": 235,
+        "isFavorite": false,
+        "guestFavorite": true,
+        "rating": 4,
+        "icon": "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/27f85be4-4432-4fec-8395-889a32f8660d.jpeg?im_w=1200",
+        "images": [
+            {
+                "name": "Living room",
+                "urls": [
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/27f85be4-4432-4fec-8395-889a32f8660d.jpeg?im_w=1200",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/d69498c9-c0e3-4a37-ac1f-fd84817f84db.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/e6f70800-d9e6-41a9-a9f2-4b4e12a5f7b9.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/c90bfcb8-86b9-4e3c-bafe-4d4737873103.jpeg?im_w=1200",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/83b771e1-3a58-4db7-997a-6da66038162a.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/33c69275-cc45-45be-9e31-f801c2071b4c.jpeg?im_w=720"
+                ]
+            },
+            {
+                "name": "Full kitchen",
+                "urls": [
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/33237874-6077-41bb-8e6a-ed7eb27f2eea.jpeg?im_w=1200",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/19b5f313-5867-41cd-9284-528ce73f481d.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/9a4df01f-8ac3-485a-a9ec-9fa40b1aea84.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/394759df-91bd-4382-9c4b-d2c3906827d4.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/b977bbda-572d-4f29-bb94-0b65947d3264.jpeg?im_w=720"
+                ]
+            },
+            {
+                "name": "Bedroom",
+                "urls": [
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/aa189838-7f4f-42e7-b897-093c29aa4d09.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/39f64122-06a6-4e69-8c4d-6900964c4229.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/2578f4cb-088d-4448-8189-14a0c124ad86.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/7c69e765-939d-4769-ba02-349897804575.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/40ea7ab9-75c2-4b26-a8d4-3ea35edb94ad.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/75fb7b78-c315-4e6f-8839-e30ff4c4a8c7.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/6906a86d-8b56-405c-8464-8405c06e1d9b.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/929d2115-6fad-4219-bb57-cdca2889bf05.jpeg?im_w=720"
+                ]
+            },
+            {
+                "name": "Full bathroom",
+                "urls": [
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/9d2f2c4e-5a12-404f-a632-330013c8c4f1.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/4c2e4387-d510-4a93-8209-3b0299d22cba.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/f6a55e42-d4ca-4bca-a814-7df5c2653bd3.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/fd5550ec-bff8-45b8-a20e-21c431ee49b8.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/c8f13ec5-3a13-446d-bd03-62597b502159.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/4b839892-83e7-4464-8a42-4999ac52d50d.jpeg?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/1646fc81-eed5-44bf-a48a-f31da674385c.jpeg?im_w=720"
+                ]
+            },
+            {
+                "name": "Workspace",
+                "urls": [
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/3216a5bf-6117-4253-930b-0f7e5b2f5304.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/cbe81dc1-643d-416c-a773-a770b3cde4c1.jpeg?im_w=720"
+                ]
+            },
+            {
+                "name": "Additional photos",
+                "urls": [
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/962b3a35-9866-49e2-9e1a-73d73528684c.png?im_w=720",
+                    "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/9d5173f9-52a9-4642-a553-32480a143a5b.png?im_w=720"
+                ]
+            }
+        ],
+        "user": {}
+    }
+]
