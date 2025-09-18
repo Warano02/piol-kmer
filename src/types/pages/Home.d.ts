@@ -1,4 +1,4 @@
-type Images = {
+export type Images = {
   name: string;
   urls: string[];
 };
@@ -8,6 +8,7 @@ export interface Houses {
   neighborhood: string;
   title: string;
   about: string;
+  imagesStyleView?: "pages" | "carrousel";
   isFavorite: boolean;
   guestFavorite: boolean;
   rating: number;
