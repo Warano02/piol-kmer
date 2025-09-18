@@ -6,8 +6,7 @@ import { useAppContext } from "@/hooks/useAppContext"
 import { Stars } from "lucide-react"
 import BtnPrimary from "../ux/BtnPrimary"
 import { Link } from "react-router-dom"
-import { ArrayLeftHome } from "../Icons"
-
+import { ArrayLeftHome, HeartSvg, Upload } from "../Icons"
 
 function RoomsContent({ House }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
@@ -134,6 +133,23 @@ function RoomsContent({ House }: RoomsContentProps) {
                 </nav>
             </main>
 
+            <section className="w-full px-4">
+                <div className="max-w-[1120px] mx-auto py-8">
+                    <div className="text-2xl lg:text-3xl font-medium mb-2 w-full flex justify-between">
+                       <h2 className="h"> {House.title}</h2>
+                        <div className="gap-4 items-center hidden lg:flex">
+                            <button className="bg-white cursor-pointer hover:bg-gray flex items-center gap-2 px-4 py-2 underline rounded-md">
+                                <Upload />
+                                <span className="block text-lg font-medium h">Share</span>
+                            </button>
+                            <button className="bg-white cursor-pointer hover:bg-gray flex items-center gap-2 px-4 py-2 underline rounded-md">
+                                <HeartSvg className={`h-[23px] w-[23px] stroke-white stroke-[3] ${isSaved ? "fill-[#ff385c]" : "fill-[rgba(0, 0, 0, 0.5)]"}`} />
+                                <span className="block text-lg font-medium h">Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }
