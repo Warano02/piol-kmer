@@ -25,4 +25,5 @@ export interface ImagePreviewPageProps {
   data: Images[];
   setShowNewPage: React.Dispatch<React.SetStateAction<boolean>>;
   setHider: React.Dispatch<React.SetStateAction<boolean>>;
+  isSaved:boolean
 }

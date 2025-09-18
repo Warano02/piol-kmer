@@ -6,11 +6,13 @@ import { useAppContext } from "@/hooks/useAppContext"
 import { Stars } from "lucide-react"
 import BtnPrimary from "../ux/BtnPrimary"
 import { Link } from "react-router-dom"
-import { ArrayLeftHome, HeartSvg, Upload } from "../Icons"
+import { ArrayLeftHome } from "../Icons"
 import ImagePreviewer from "./ImagePreviewer"
 import ImagePreviewPage from "./ImagePreviewPage"
+import ShareLinks from "../Common/ShareLinks"
+import AddToWhiteList from "../Common/AddToWhiteList"
 
-function RoomsContent({ House,setHider }: RoomsContentProps) {
+function RoomsContent({ House, setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const [showHouseImages, setShowHouseImages] = useState(false)
@@ -81,7 +83,7 @@ function RoomsContent({ House,setHider }: RoomsContentProps) {
     return (
         <>
             {showHouseImages && images && <ImageViewer setHider={setHider} setIsSaved={setIsSaved} isSaved={isSaved} selectedImage={selectedImage} setShowHouseImages={setShowHouseImages} images={images} />}
-            {showNewPage && House && <ImagePreviewPage setHider={setHider}  setShowNewPage={setShowNewPage} data={House.images} />}
+            {showNewPage && House && <ImagePreviewPage setHider={setHider} setShowNewPage={setShowNewPage} isSaved={isSaved} data={House.images} />}
             <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0  border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-51" : "lg:opacity-0 lg:z-0"}`}>
                 <div className="max-w-[1120px] px-4 mx-auto flex items-center justify-between">
                     <ul className="hidden md:flex gap-4">
@@ -143,14 +145,8 @@ function RoomsContent({ House,setHider }: RoomsContentProps) {
                     <div className="text-2xl lg:text-3xl font-medium mb-2 w-full flex justify-between">
                         <h2 className="h"> {House.title}</h2>
                         <div className="gap-4 items-center hidden lg:flex">
-                            <button className="bg-white cursor-pointer hover:bg-gray flex items-center gap-2 px-4 py-2 underline rounded-md">
-                                <Upload />
-                                <span className="block text-lg font-medium h">Share</span>
-                            </button>
-                            <button className="bg-white cursor-pointer hover:bg-gray flex items-center gap-2 px-4 py-2 underline rounded-md">
-                                <HeartSvg className={`h-[23px] w-[23px] stroke-white stroke-[3] ${isSaved ? "fill-[#ff385c]" : "fill-[rgba(0, 0, 0, 0.5)]"}`} />
-                                <span className="block text-lg font-medium h">Save</span>
-                            </button>
+                            <ShareLinks />
+                            <AddToWhiteList isSaved={isSaved} />
                         </div>
                     </div>
 
