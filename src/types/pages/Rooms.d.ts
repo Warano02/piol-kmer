@@ -24,7 +24,15 @@ export interface RoomImagesPreviewProps {
 
 export interface ImagePreviewPageProps {
   data: Images[];
+  setShowHouseImages: React.Dispatch<React.SetStateAction<boolean>>;
   setShowNewPage: React.Dispatch<React.SetStateAction<boolean>>;
   setHider: React.Dispatch<React.SetStateAction<boolean>>;
-  isSaved:boolean
+  isSaved: boolean;
+  setSelectedImage: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+export interface GalleryProps {
+  images: string[];
+  setSelectedImage: React.Dispatch<React.SetStateAction<string | null>>;
+  setShowHouseImages: React.Dispatch<React.SetStateAction<boolean>>;
 }

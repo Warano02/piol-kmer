@@ -6,11 +6,12 @@ import ShareLinks from "../Common/ShareLinks";
 import AddToWhiteList from "../Common/AddToWhiteList";
 import Gallery from "./Gallery";
 
-function ImagePreviewPage({ setShowNewPage, data, setHider, isSaved }: ImagePreviewPageProps) {
+function ImagePreviewPage({ setShowNewPage, data, setHider, isSaved,setShowHouseImages,setSelectedImage }: ImagePreviewPageProps) {
     const closer = () => {
         setShowNewPage(false)
         setHider(true)
     }
+
     useEffect(() => {
         setHider(false)
     })
@@ -52,7 +53,7 @@ function ImagePreviewPage({ setShowNewPage, data, setHider, isSaved }: ImagePrev
                                 <h1 className="h text-2xl md:text-3xl ">{group.name} </h1>
                             </div>
                             <div className="flex-1">
-                                <Gallery images={group.urls} />
+                                <Gallery images={group.urls} setShowHouseImages={setShowHouseImages} setSelectedImage={setSelectedImage} />
                             </div>
 
                         </section>
