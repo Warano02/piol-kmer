@@ -5,6 +5,8 @@ import type { RoomsContentProps } from "@/types/pages/Rooms"
 import { useAppContext } from "@/hooks/useAppContext"
 import { Stars } from "lucide-react"
 import BtnPrimary from "../ux/BtnPrimary"
+import { Link } from "react-router-dom"
+import { ArrayLeftHome } from "../Icons"
 
 
 function RoomsContent({ House }: RoomsContentProps) {
@@ -120,6 +122,17 @@ function RoomsContent({ House }: RoomsContentProps) {
                     </BtnPrimary>
                 </div>
             </header>
+
+            <main className="w-full relative block lg:hidden">
+                <nav className="absolute top-0 left-0 w-full p-2 z-20 flex items-center justify-between">
+                    <Link to={"/"} className="w-9 h-9 flex items-center justify-center rounded-full bg-white">
+                        <ArrayLeftHome />
+                    </Link>
+                    <div className="w-full min-h-[30vh]">
+                        {images && (<img src={images[0]} className="w-full object-cover" alt="" />)}
+                    </div>
+                </nav>
+            </main>
 
         </>
     )
