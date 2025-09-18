@@ -8,11 +8,14 @@ import BtnPrimary from "../ux/BtnPrimary"
 import { Link } from "react-router-dom"
 import { ArrayLeftHome, HeartSvg, Upload } from "../Icons"
 import ImagePreviewer from "./ImagePreviewer"
+import ImagePreviewPage from "./ImagePreviewPage"
 
-function RoomsContent({ House }: RoomsContentProps) {
+function RoomsContent({ House,setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const [showHouseImages, setShowHouseImages] = useState(false)
+    const [showNewPage, setShowNewPage] = useState(true)
+
     const [images, setImages] = useState<string[] | null>(null)
     const [isSaved, setIsSaved] = useState(false)
 
@@ -77,8 +80,8 @@ function RoomsContent({ House }: RoomsContentProps) {
 
     return (
         <>
-            {showHouseImages && <ImageViewer setIsSaved={setIsSaved} isSaved={isSaved} selectedImage={selectedImage} setShowHouseImages={setShowHouseImages} images={images || [""]} />}
-
+            {showHouseImages && images && <ImageViewer setHider={setHider} setIsSaved={setIsSaved} isSaved={isSaved} selectedImage={selectedImage} setShowHouseImages={setShowHouseImages} images={images} />}
+            {showNewPage && House && <ImagePreviewPage setHider={setHider}  setShowNewPage={setShowNewPage} data={House.images} />}
             <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0  border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-51" : "lg:opacity-0 lg:z-0"}`}>
                 <div className="max-w-[1120px] px-4 mx-auto flex items-center justify-between">
                     <ul className="hidden md:flex gap-4">

@@ -3,17 +3,19 @@ import { useEffect, useState } from "react"
 import type { ImagesViewerProps } from "@/types/pages/Rooms";
 import { ArrayRightHome, HeartSvg, LeftArrow2 } from "../Icons";
 
-function ImageViewer({ setShowHouseImages, selectedImage, images, isSaved, setIsSaved }: ImagesViewerProps) {
+function ImageViewer({ setShowHouseImages, selectedImage, setHider, images, isSaved, setIsSaved }: ImagesViewerProps) {
     const [counter, setCounter] = useState(images.indexOf(selectedImage!))
     const [currentImage, setCurentImage] = useState(selectedImage)
     useEffect(() => {
         setCurentImage(() => images[counter])
     }, [counter, images])
-
+    useEffect(() => {
+        setHider(false)
+    })
     return (
         <section className="fixed top-0 left-0 w-full h-full z-51 bg-black p-10 select-none">
             <header className="flex items-center justify-between">
-                <button onClick={() => setShowHouseImages(false)} className="bg-black cursor-pointer text-white hover:bg-gray-600 flex items-center justify-center gap-2 font-semibold px-4 py-2 rounded-md">
+                <button onClick={() => { setHider(true); setShowHouseImages(false) }} className="bg-black cursor-pointer text-white hover:bg-gray-600 flex items-center justify-center gap-2 font-semibold px-4 py-2 rounded-md">
                     <Times />
                     <span className="tracking-2">Close</span>
                 </button>

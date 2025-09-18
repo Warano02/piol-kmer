@@ -11,6 +11,7 @@ function Rooms() {
   const { id } = useParams()
   const [isLoading, setIsLoading] = useState(true)
   const [Home, setHome] = useState<Houses | null>(null)
+  const [hider, setHider] = useState(true)
 
   useEffect(() => {
     if (!Home) {
@@ -22,10 +23,10 @@ function Rooms() {
   }, [id, Home])
   return (
     <>
-      <Header width="max-w-[1120px] hidden lg:flex" position="relative" />
+      {hider && <Header width="max-w-[1120px] hidden lg:flex" position="relative" />}
       {isLoading && <Loader />}
-      {Home && <RoomsContent House={Home} />}
-      <Footer />
+      {Home && <RoomsContent House={Home} setHider={setHider} />}
+      {hider && <Footer />}
     </>
   )
 }
