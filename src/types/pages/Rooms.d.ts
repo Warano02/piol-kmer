@@ -11,3 +11,9 @@ interface ImagesViewerProps {
 export interface RoomsContentProps {
   House: Houses;
 }
+
+export interface RoomImagesPreviewProps {
+  images: string[];
+  setShowHouseImages: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedImage: React.Dispatch<React.SetStateAction<string | null>>;
+}

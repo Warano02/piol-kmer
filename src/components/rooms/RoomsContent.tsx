@@ -7,10 +7,11 @@ import { Stars } from "lucide-react"
 import BtnPrimary from "../ux/BtnPrimary"
 import { Link } from "react-router-dom"
 import { ArrayLeftHome, HeartSvg, Upload } from "../Icons"
+import ImagePreviewer from "./ImagePreviewer"
 
 function RoomsContent({ House }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
-    const [selectedImage] = useState<string | null>(null)
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const [showHouseImages, setShowHouseImages] = useState(false)
     const [images, setImages] = useState<string[] | null>(null)
     const [isSaved, setIsSaved] = useState(false)
@@ -23,8 +24,8 @@ function RoomsContent({ House }: RoomsContentProps) {
 
     const [scroll, setScroll] = useState<'photos' | "amenities" | "reviews" | "location" | string | null>(null);
 
-    const [showHeader] = useState(true)
-    const [rightSectionHeader, setRightSectionHeader] = useState(true);
+    const [showHeader] = useState(false)
+    const [rightSectionHeader, setRightSectionHeader] = useState(false);
 
     useEffect(() => {
         if (!images) {
@@ -135,8 +136,9 @@ function RoomsContent({ House }: RoomsContentProps) {
 
             <section className="w-full px-4">
                 <div className="max-w-[1120px] mx-auto py-8">
+                    {/* Title of the House */}
                     <div className="text-2xl lg:text-3xl font-medium mb-2 w-full flex justify-between">
-                       <h2 className="h"> {House.title}</h2>
+                        <h2 className="h"> {House.title}</h2>
                         <div className="gap-4 items-center hidden lg:flex">
                             <button className="bg-white cursor-pointer hover:bg-gray flex items-center gap-2 px-4 py-2 underline rounded-md">
                                 <Upload />
@@ -148,6 +150,13 @@ function RoomsContent({ House }: RoomsContentProps) {
                             </button>
                         </div>
                     </div>
+
+                    {/* Images Preview  */}
+                    <div ref={ImagesRef} className="hidden lg:block h-screen rounded-2xl overflow-hidden my-8 relative min-h-[20vh] max-h-[40vh]">
+                        {images && <ImagePreviewer images={images} setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} />}
+                    </div>
+
+
                 </div>
             </section>
         </>

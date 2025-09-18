@@ -4,10 +4,10 @@ import type { ImagesViewerProps } from "@/types/pages/Rooms";
 import { ArrayRightHome, HeartSvg, LeftArrow2 } from "../Icons";
 
 function ImageViewer({ setShowHouseImages, selectedImage, images, isSaved, setIsSaved }: ImagesViewerProps) {
-    const [counter, setCounter] = useState(images.indexOf(selectedImage || ''))
+    const [counter, setCounter] = useState(images.indexOf(selectedImage!))
     const [currentImage, setCurentImage] = useState(selectedImage)
     useEffect(() => {
-        setCurentImage(() => images[counter + 1])
+        setCurentImage(() => images[counter])
     }, [counter, images])
 
     return (
