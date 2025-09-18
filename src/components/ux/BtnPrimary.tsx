@@ -2,9 +2,9 @@ import { useAppContext } from "@/hooks/useAppContext";
 import { classNames } from "@/utils/style";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { dark: boolean, children: React.ReactNode, rounded: boolean }
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { style: Record<string, string>, dark?: boolean, children: React.ReactNode, rounded?: boolean }
 
-function BtnPrimary({ rounded = false, dark, children, ...rest }: Props) {
+function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const { destination, selectedDay, selectedEnd } = useAppContext()
     const animate = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -23,6 +23,7 @@ function BtnPrimary({ rounded = false, dark, children, ...rest }: Props) {
 
     return (
         <button
+            style={style}
             ref={buttonRef}
             onMouseMove={(e) => {
                 animate(e);
