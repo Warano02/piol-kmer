@@ -18,6 +18,7 @@ export interface RoomsContentProps {
 export interface RoomImagesPreviewProps {
   images: string[];
   setShowHouseImages: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowNewPage: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedImage: React.Dispatch<React.SetStateAction<string | null>>;
 }
 

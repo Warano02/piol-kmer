@@ -1,7 +1,7 @@
 import type { RoomImagesPreviewProps } from "@/types/pages/Rooms"
 import { Grid } from "../Icons"
 
-function ImagePreviewer({ images, setSelectedImage, setShowHouseImages }: RoomImagesPreviewProps) {
+function ImagePreviewer({ images, setSelectedImage, setShowHouseImages,setShowNewPage }: RoomImagesPreviewProps) {
     const seter = (selected: string): void => {
         setShowHouseImages(true)
         setSelectedImage(selected)
@@ -32,7 +32,7 @@ function ImagePreviewer({ images, setSelectedImage, setShowHouseImages }: RoomIm
                     </div>
                 ))}
             </div>
-            <button className="flex cursor-pointer items-center justify-center gap-2 absolute bottom-4 right-4 rounded-md font-medium border border-black h bg-white text-blackColor px-3 py-1">
+            <button onClick={()=>setShowNewPage(true)} className="flex cursor-pointer items-center justify-center gap-2 absolute bottom-4 right-4 rounded-md font-medium border border-black h bg-white text-blackColor px-3 py-1">
                 <span>
                     <Grid />
                 </span>

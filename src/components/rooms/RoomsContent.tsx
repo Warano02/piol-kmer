@@ -152,7 +152,7 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
 
                     {/* Images Preview  */}
                     <div ref={ImagesRef} className="hidden lg:block h-screen rounded-2xl overflow-hidden my-8 relative min-h-[20vh] max-h-[40vh]">
-                        {images && <ImagePreviewer images={images} setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} />}
+                        {images && <ImagePreviewer setShowNewPage={setShowNewPage}  images={images} setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} />}
                     </div>
 
 
