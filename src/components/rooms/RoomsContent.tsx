@@ -20,10 +20,10 @@ function RoomsContent({ House }: RoomsContentProps) {
     const LocationRef = useRef<HTMLDivElement>(null);
     const CardRef = useRef<HTMLDivElement>(null);
 
-    const [scroll, setScroll] = useState<'photos' | "amenities" | "reviews" | "location" | null>(null);
+    const [scroll, setScroll] = useState<'photos' | "amenities" | "reviews" | "location" | string | null>(null);
 
-    const [showHeader] = useState(false)
-    const [rightSectionHeader, setRightSectionHeader] = useState(false);
+    const [showHeader] = useState(true)
+    const [rightSectionHeader, setRightSectionHeader] = useState(true);
 
     useEffect(() => {
         if (!images) {
@@ -38,17 +38,10 @@ function RoomsContent({ House }: RoomsContentProps) {
     useEffect(() => {
         if (CardRef.current) {
             const { x } = CardRef.current?.getBoundingClientRect() || 0;
-
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > x) {
-                    setRightSectionHeader(true);
-                } else {
-                    setRightSectionHeader(false);
-                }
-            });
+            window.addEventListener("scroll", () => setRightSectionHeader(() => window.scrollY > x));
         }
     }, [CardRef]);
-
+    const TabElem = ["Photos", "Amenities", "Reviews", "Location"]
     useEffect(() => {
         if (scroll) {
             switch (scroll) {
@@ -84,33 +77,20 @@ function RoomsContent({ House }: RoomsContentProps) {
         <>
             {showHouseImages && <ImageViewer setIsSaved={setIsSaved} isSaved={isSaved} selectedImage={selectedImage} setShowHouseImages={setShowHouseImages} images={images || [""]} />}
 
-            <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0 z-30 border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-30" : "lg:opacity-0 lg:z-0"}`}>
+            <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0  border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-51" : "lg:opacity-0 lg:z-0"}`}>
                 <div className="max-w-[1120px] px-4 mx-auto flex items-center justify-between">
                     <ul className="hidden md:flex gap-4">
-                        <li
-                            onClick={() => setScroll("photos")}
-                            className="text-md font-medium py-6 px-2 border-b-4 border-transparent transition duration-200 cursor-pointer hover:border-blackColor"
-                        >
-                            Photos
-                        </li>
-                        <li
-                            onClick={() => setScroll("amenities")}
-                            className="text-md font-medium py-6 px-2 border-b-4 border-transparent transition duration-200 cursor-pointer hover:border-blackColor"
-                        >
-                            Amenities
-                        </li>
-                        <li
-                            onClick={() => setScroll("reviews")}
-                            className="text-md font-medium py-6 px-2 border-b-4 border-transparent transition duration-200 cursor-pointer hover:border-blackColor"
-                        >
-                            Reviews
-                        </li>
-                        <li
-                            onClick={() => setScroll("location")}
-                            className="text-md font-medium py-6 px-2 border-b-4 border-transparent transition duration-200 cursor-pointer hover:border-blackColor"
-                        >
-                            Location
-                        </li>
+                        {
+                            TabElem.map((el, i) => (
+                                <li
+                                    key={i}
+                                    onClick={() => setScroll(el.toLocaleLowerCase())}
+                                    className="text-md font-medium py-6 px-2 border-b-4 border-transparent transition duration-200 cursor-pointer hover:border-blackColor"
+                                >
+                                    {el}
+                                </li>
+                            ))
+                        }
                     </ul>
 
                     <div className={`gap-4 w-full justify-between md:w-fit md:justify-start py-3 md:py-0 flex md:${rightSectionHeader ? "flex" : "hidden"}`}>
