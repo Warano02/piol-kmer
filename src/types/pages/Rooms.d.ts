@@ -36,3 +36,9 @@ export interface GalleryProps {
   setSelectedImage: React.Dispatch<React.SetStateAction<string | null>>;
   setShowHouseImages: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface GalleryTemplateProps {
+  urls: string[];
+  width?: string;
+  handleClick: (url: string) => void;
+}

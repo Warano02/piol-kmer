@@ -39,6 +39,8 @@ export interface AppContextType extends DateSelector {
   setWhiteList: React.Dispatch<React.SetStateAction<WhiteList>>;
   currencyList: Currency[];
   setShowWhiteListCreator: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
   currencyList: Currency[];
   showPlaceFilter: boolean;
   setShowPlaceFilter: React.Dispatch<React.SetStateAction<boolean>>;
@@ -60,4 +62,3 @@ export type CurrencySettingsProps = {
   isSelected: boolean;
   onClick: () => void;
 };
-

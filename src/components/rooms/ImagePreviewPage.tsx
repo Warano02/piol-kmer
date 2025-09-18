@@ -6,7 +6,7 @@ import ShareLinks from "../Common/ShareLinks";
 import AddToWhiteList from "../Common/AddToWhiteList";
 import Gallery from "./Gallery";
 
-function ImagePreviewPage({ setShowNewPage, data, setHider, isSaved,setShowHouseImages,setSelectedImage }: ImagePreviewPageProps) {
+function ImagePreviewPage({ setShowNewPage, data, setHider, isSaved, setShowHouseImages, setSelectedImage }: ImagePreviewPageProps) {
     const closer = () => {
         setShowNewPage(false)
         setHider(true)
@@ -32,11 +32,11 @@ function ImagePreviewPage({ setShowNewPage, data, setHider, isSaved,setShowHouse
                 <div className="w-full flex gap-2  px-2 min-h-[150px] relative">
                     {
                         data.map((section, index) => (
-                            <HashLink to={`#${section.name}`} key={index} className="flex w-41 h-36 flex-col gap-2 ">
-                                <div className="w-full h-32 relative image-cover">
-                                    <img src={section.urls[0]} alt="" className="w-full shadow min-h-full h-full object-cover" />
+                            <HashLink to={`#${section.name}`} key={index} className="flex w-41  flex-col gap-2  h-fit">
+                                <div className="flex-1 w-full h-32 relative image-cover">
+                                    <img src={section.urls[0]} alt="" className="w-full shadow  h-32 object-cover" />
                                 </div>
-                                <span className="h2 text-[18px]">{section.name} </span>
+                                <span className="shrink-0 h2 text-[18px]">{section.name} </span>
                             </HashLink>
                         ))
                     }
