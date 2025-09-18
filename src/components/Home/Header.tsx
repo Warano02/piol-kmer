@@ -10,8 +10,8 @@ import SemiHeader from "./SemiHeader"
 import HeaderSearchLayoutOne from "./HeaderSearchLayoutOne"
 import HeaderSearchLayoutTwo from "./HeaderSearchLayoutTwo"
 
-interface Props { width: string }
-function Header({ width = "container" }: Props) {
+interface Props { width?: string,position?:string }
+function Header({ width = "container" ,position="sticky"}: Props) {
     const { user, setShowCurrencySettings } = useAppContext()
     const [menu, setMenu] = useState(false)
     const [overlay, setOverlay] = useState(false)
@@ -51,7 +51,7 @@ function Header({ width = "container" }: Props) {
         }
     ]
     return (
-        <div className={`sticky top-0  px-8 ${!overlay ? "bg-white-secondary" : "bg-gray"} flex justify-between items-center z-50`}>
+        <div className={`${position} top-0  px-8 ${!overlay ? "bg-white-secondary" : "bg-gray"} flex justify-between items-center z-50`}>
             <div className={`w-full xl:${width} relative mx-auto py-2 md:py-5 flex items-center justify-between`}>
                 <Logo />
                 <HeaderMainSection overlay={overlay} setOverlay={setOverlay} selection={selection} setSelection={setSelection} />
