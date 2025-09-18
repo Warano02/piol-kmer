@@ -68,19 +68,37 @@ export const RateStars = () => {
     </svg>
   )
 }
-export const ArrayRightHome = () => {
+export const ArrayRightHome = ({ color }: { color: string }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" fill="currentColor" stroke="currentColor" className="h-[12px] w-[12px] stroke-[5.33333px] ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" fill="currentColor" stroke="currentColor" className={`h-[12px] w-[12px] stroke-[5.33333px]  stroke-${color}`}>
       <path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path>
     </svg>
   )
 }
-export const ArrayLeftHome = () => {
+export const ArrayLeftHome = ({ color }: { color: string }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" fill="currentColor" stroke="currentColor" className="h-[12px] w-[12px] stroke-[5.33333px] ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" fill="currentColor" stroke="currentColor" className={`h-[12px] w-[12px] stroke-[5.33333px] stroce-${color}`}>
       <path fill="none" d="M20 28 8.7 16.7a1 1 0 0 1 0-1.4L20 4"></path>
     </svg>
   )
 }
+
+export const LeftArrow2 = ({ color }: { color: string }) => {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      fill="currentColor" stroke="currentColor"
+      role="presentation"
+      focusable="false"
+      className={`block fill-none h-3 w-3 stroke-${color} stroke-[5.3333]`}
+    >
+      <g fill="none">
+        <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+      </g>
+    </svg>
+  );
+};
 
 export default Logo
