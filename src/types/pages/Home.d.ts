@@ -2,6 +2,10 @@ export type Images = {
   name: string;
   urls: string[];
 };
+type Amentie = {
+  name: string;
+  icon: string;
+};
 
 export interface Houses {
   _id: string;
@@ -14,5 +18,12 @@ export interface Houses {
   rating: number;
   icon: string;
   price: number;
+  amenities: Amentie[];
+  capacity: {
+    bedrooms: number;
+    bed: number;
+    person_capacity: number;
+    pets_capacity: number;
+  };
   images: Images[];
 }

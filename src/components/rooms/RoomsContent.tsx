@@ -11,12 +11,13 @@ import ImagePreviewer from "./ImagePreviewer"
 import ImagePreviewPage from "./ImagePreviewPage"
 import ShareLinks from "../Common/ShareLinks"
 import AddToWhiteList from "../Common/AddToWhiteList"
+import Infos from "./Infos"
 
 function RoomsContent({ House, setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const [showHouseImages, setShowHouseImages] = useState(false)
-    const [showNewPage, setShowNewPage] = useState(true)
+    const [showNewPage, setShowNewPage] = useState(false)
 
     const [images, setImages] = useState<string[] | null>(null)
     const [isSaved, setIsSaved] = useState(false)
@@ -152,9 +153,12 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
 
                     {/* Images Preview  */}
                     <div ref={ImagesRef} className="hidden lg:block h-screen rounded-2xl overflow-hidden my-8 relative min-h-[20vh] max-h-[40vh]">
-                        {images && <ImagePreviewer setShowNewPage={setShowNewPage}  images={images} setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} />}
+                        {images && <ImagePreviewer setShowNewPage={setShowNewPage} images={images} setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} />}
                     </div>
 
+                    <div className="flex gap-16 relative mb-8 mt-8 lg:mt-0">
+                        <Infos House={House} />
+                    </div>
 
                 </div>
             </section>

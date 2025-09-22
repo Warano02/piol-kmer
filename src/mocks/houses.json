@@ -7,6 +7,21 @@
         "price": 235,
         "isFavorite": false,
         "guestFavorite": true,
+        "capacity": {
+            "bedrooms": 2,
+            "bed": 2,
+            "person_capacity": 2,
+            "pets_capacity": 3
+        },
+        "amenities": [
+            {"name":"BBQ grill","icon":"BBQ grill"},
+            {"name":"Iron","icon":"Iron"},
+            {"name":"Crib","icon":"Crib"},
+            {"name":"Waterfront","icon":"Waterfront"},
+            {"name":"Indoor fireplace","icon":"Indoor fireplace"},
+            {"name":"Free parking","icon":"Free parking"},
+            {"name":"Air conditioning","icon":"Air conditioning"}
+        ],
         "rating": 4,
         "icon": "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/27f85be4-4432-4fec-8395-889a32f8660d.jpeg?im_w=1200",
         "images": [

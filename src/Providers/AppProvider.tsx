@@ -71,7 +71,7 @@ export const AppProvider = ({ children }: Props) => {
   const [guests, setGuests] = useState<GuestType>({ adults: 0, children: 0, infant: 0, pets: 0 })
   const [whiteList, setWhiteList] = useState<WhiteList>(null)
   const [showWhiteListCreator, setShowWhiteListCreator] = useState(false)
-  const [showModal,setShowModal]=useState(true)
+  const [showModal, setShowModal] = useState(false)
   const formatPrice = (price: number) => {
     const rate = currencyList.find((r) => r.abr == currency)
     return !rate ? `$ ${price}` : `${rate?.signe} ${Math.floor(price * rate?.ratePerUSD)}`
@@ -97,7 +97,7 @@ export const AppProvider = ({ children }: Props) => {
 
   const result = guests.adults! > 0 ? `${guests.adults} Adult, ${guests.children} Children.` : null
 
-  const value = {showModal,setShowModal, result, selectedEnd,showWhiteListCreator,setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const value = { showModal, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}
