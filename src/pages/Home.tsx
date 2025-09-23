@@ -5,11 +5,6 @@ import HouseCarrousel from "@/components/Home/HouseCarrousel"
 // import SingleHouse from "@/components/Home/SingleHouse"
 import { useAppContext } from "@/hooks/useAppContext"
 import MockHouse from "@/mocks/houses.json"
-// import type { SingleHome } from "@/types"
-// import { useState } from "react"
-
-// import icon from "@/assets/icon/icon.png"
-
 
 function Home() {
 
@@ -17,7 +12,6 @@ function Home() {
   const o = MockHouse[0]
   const Houses = Array.from({ length: 50 }, () => { return { ...o, _id: o._id + "d11d" + Math.random() } })
 
-  // const [data, setData] = useState<Houses | undefined>(undefined)
   // const [isLoading,setIsLoading]=useState(true)
 
   return (

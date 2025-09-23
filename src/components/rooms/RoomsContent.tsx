@@ -12,6 +12,7 @@ import ImagePreviewPage from "./ImagePreviewPage"
 import ShareLinks from "../Common/ShareLinks"
 import AddToWhiteList from "../Common/AddToWhiteList"
 import Infos from "./Infos"
+import Date_GuestsPickerCard from "./Date_GuestsPickerCard"
 
 function RoomsContent({ House, setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
@@ -158,6 +159,9 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
 
                     <div className="flex gap-16 relative mb-8 mt-8 lg:mt-0">
                         <Infos House={House} />
+                        <div className="hidden lg:block">
+                            <Date_GuestsPickerCard price={House.price} rating={House.rating} reviews={House.reviews.length} />
+                        </div>
                     </div>
 
                 </div>

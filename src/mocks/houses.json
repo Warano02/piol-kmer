@@ -14,15 +14,50 @@
             "pets_capacity": 3
         },
         "amenities": [
-            {"name":"BBQ grill","icon":"BBQ grill"},
-            {"name":"Iron","icon":"Iron"},
-            {"name":"Crib","icon":"Crib"},
-            {"name":"Waterfront","icon":"Waterfront"},
-            {"name":"Indoor fireplace","icon":"Indoor fireplace"},
-            {"name":"Free parking","icon":"Free parking"},
-            {"name":"Air conditioning","icon":"Air conditioning"}
+            {
+                "name": "BBQ grill",
+                "icon": "BBQ grill"
+            },
+            {
+                "name": "Iron",
+                "icon": "Iron"
+            },
+            {
+                "name": "Crib",
+                "icon": "Crib"
+            },
+            {
+                "name": "Waterfront",
+                "icon": "Waterfront"
+            },
+            {
+                "name": "Indoor fireplace",
+                "icon": "Indoor fireplace"
+            },
+            {
+                "name": "Free parking",
+                "icon": "Free parking"
+            },
+            {
+                "name": "Air conditioning",
+                "icon": "Air conditioning"
+            }
         ],
         "rating": 4,
+        "reviews": [
+            {
+                "name": "John Doe",
+                "date": "2023-10-01",
+                "comment": "Great place to stay!",
+                "rating": 5
+            },
+            {
+                "name": "Jane Smith",
+                "date": "2023-09-15",
+                "comment": "Very comfortable and well located.",
+                "rating": 4
+            }
+        ],
         "icon": "https://a0.muscache.com/im/pictures/hosting/Hosting-1458643148166675675/original/27f85be4-4432-4fec-8395-889a32f8660d.jpeg?im_w=1200",
         "images": [
             {

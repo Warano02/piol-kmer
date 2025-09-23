@@ -42,3 +42,14 @@ export interface GalleryTemplateProps {
   width?: string;
   handleClick: (url: string) => void;
 }
+
+export interface TabPropsForSingleRoom {
+  tab: "date" | "guests" | null;
+  setTab: React.Dispatch<React.SetStateAction<"date" | "guests" | null>>;
+}
+
+export interface CheckinCheckOutProps {
+  rounded: boolean;
+  setSelection: React.Dispatch<React.SetStateAction<"check-in" | "check-out">>;
+  setTab: React.Dispatch<React.SetStateAction<"date" | "guests" | null>>;
+}

@@ -6,6 +6,12 @@ type Amentie = {
   name: string;
   icon: string;
 };
+type review = {
+  name: string;
+  date: string;
+  comment: string;
+  rating: number;
+};
 
 export interface Houses {
   _id: string;
@@ -25,5 +31,6 @@ export interface Houses {
     person_capacity: number;
     pets_capacity: number;
   };
+  reviews: review[];
   images: Images[];
 }
