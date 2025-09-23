@@ -33,17 +33,18 @@ function Date_GuestsPickerCard({ price, rating, reviews }: Date_GuestsPickerCard
                         </span>
                     </span>
                 </div>
+
+                <div className="rounded-lg border border-darkBorderColor mb-6 relative">
+                    <Date tab={tab} setTab={setTab} />
+                    <Guests tab={tab} setTab={setTab} />
+                </div>
+                <div>
+                    <BtnPrimary onClick={() => alert("Implementar reserva")} style={{ width: "100%",display:"flex",justifyContent:"center",alignItems:"center"}} >
+                        Reserve
+                    </BtnPrimary>
+                </div>
             </div>
 
-            <div className="rounded-lg border border-darkBorderColor mb-6 relative">
-                <Date tab={tab} setTab={setTab}/>
-                <Guests tab={tab} setTab={setTab}/>
-            </div>
-            <div>
-                <BtnPrimary onClick={() => alert("Implementar reserva")}>
-                    Reserve
-                </BtnPrimary>
-            </div>
         </div>
     )
 }
