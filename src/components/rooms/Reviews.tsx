@@ -10,10 +10,7 @@ function Reviews() {
       <div className="grid grid-cols-2 gap-2 flex-wrap relative">
         {/* animate-pulse */}
         {Array.from({ length: 4 }).map((_, index) => (
-          <div className="min-w-1/2 h-52  rounded-lg">
             <ReviewCard key={index} setShowAllReviews={setShowAllReviews} text={text} pp={userImage} name={"Mr Warano"} old={"2 years on Airbnb"} date={"2 weeks ago"} period={"Stay a few nights"} showAllReviews={showAllReviews} />
-
-          </div>
         ))}
       </div>
       {showAllReviews && <AllReviews setShowAllReviews={setShowAllReviews} />}
@@ -22,8 +19,8 @@ function Reviews() {
   )
 }
 
-const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShowAllReviews }: { text: string, pp: string, name: string, old: string, date: string, period: string, showAllReviews: boolean, setShowAllReviews: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  return (<div className=" ">
+const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShowAllReviews,width="1/2" }: { text: string, pp: string, name: string, old: string, date: string, period: string, showAllReviews: boolean, setShowAllReviews: React.Dispatch<React.SetStateAction<boolean>> ,width?:string}) => {
+  return (<div className= {`min-w-${width} h-52  rounded-lg`}>
     <div className="w-full h-18  rounded-t-lg flex items-center p-4 gap-2">
       <Link to={""} className="w-10 h-10 rounded-full overflow-hidden relative">
         <img src={pp} alt="User Profil" className="w-full h-full object-cover" />
