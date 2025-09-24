@@ -58,8 +58,8 @@ function Infos({ House }: { House: Houses }) {
               onClick={() => setAmenitiesModal(false)}
             ></div>
             <div className="w-[50rem] h-full max-h-[calc(100vh-110px)] bg-white z-40 relative rounded-xl animation_primary">
-              <header className="flex items-center py-6 px-4">
-                <button onClick={() => setAmenitiesModal(false)}>
+              <header className="flex items-center py-6 px-4 cursor-pointer">
+                <button onClick={() => setAmenitiesModal(false)} className="cursor-pointer">
                   <Times />
                 </button>
               </header>
