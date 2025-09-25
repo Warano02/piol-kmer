@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 function Infos({ House }: { House: Houses }) {
   const [amenitiesModal, setAmenitiesModal] = useState(false);
   const { AppName } = useAppContext()
+  const [vl, svl] = useState(false)
   return (
     <div className="w-full">
       <div className="flex items-start  justify-between flex-col  gap-1 pb-6">
@@ -47,13 +48,27 @@ function Infos({ House }: { House: Houses }) {
             <div>
             </div>
           </div>
-
         </Link>
+
+        <div className="w-full mt-4 flex justify-start">
+          <div className="min-w-2xs h-[80px] flex gap-2 px-2">
+            <img src={"https://a0.muscache.com/im/pictures/user/User/original/1c9147e8-be36-4b5b-967c-ef7f02a62d06.jpeg?im_w=240"} alt="Host profil" className="w-[50px] h-[50px] rounded-full mr-2" />
+            <div className="flex flex-col gap-2">
+              <h1 className="h text-xl">Hosted by Cyrille </h1>
+              <h6 className="text-xs text-black-secondary">7 months hosting  </h6>
+            </div>
+          </div>
+
+        </div>
       </div>
       <div className="py-8 border-y border-gray">
-        <p className="text-md leading-7 text-justify">
-          {House?.about}
+        <p className="text-md leading-7 text-justify p">
+          {vl ? House?.about : House?.about?.slice(0, 250) + "..."}
         </p>
+        {House?.about?.length > 250 && <span className="mt-8 text-bold text-[18px] h cursor-pointer hover:underline hover:text-[#524d4d]" onClick={() => svl((prev) => !prev)}>
+          {vl ? "Show less" : "Show more"}
+        </span>
+        }
       </div>
 
       <div className="py-8">
@@ -89,8 +104,8 @@ function Infos({ House }: { House: Houses }) {
           onClick={() => setAmenitiesModal(false)}
         ></div>
         <div className="w-[50rem] h-full max-h-[calc(100vh-110px)] bg-white z-40 relative rounded-xl animation_primary">
-          <header className="flex items-center py-6 px-4 cursor-pointer">
-            <button onClick={() => setAmenitiesModal(false)} className="cursor-pointer">
+          <header className="flex items-center py-6 px-4 cursor-pointer" onClick={() => setAmenitiesModal(false)}>
+            <button onClick={() => setAmenitiesModal(false)} className="cursor-pointer p-2 rounded-full hover:bg-gray-200 transition-all">
               <Times />
             </button>
           </header>

@@ -99,7 +99,7 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
         <>
             {showHouseImages && images && <ImageViewer setHider={setHider} setIsSaved={setIsSaved} isSaved={isSaved} selectedImage={selectedImage} setShowHouseImages={setShowHouseImages} images={images} />}
             {showNewPage && House && <ImagePreviewPage setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} setHider={setHider} setShowNewPage={setShowNewPage} isSaved={isSaved} data={House.images} />}
-            <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0  border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-51" : "lg:opacity-0 lg:z-90"}`}>
+            <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0 hidden border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-51" : "lg:opacity-0 lg:z-90"}`}>
                 <div className="max-w-[1120px] px-4 mx-auto flex items-center justify-between">
                     <ul className="hidden md:flex gap-4">
                         {

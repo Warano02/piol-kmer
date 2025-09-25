@@ -67,14 +67,14 @@ const TemplateFor5 = ({ handleClick, urls }: GalleryTemplateProps) => {
             <TemplateFor2 urls={urls.slice(1, 3)} handleClick={handleClick} />
             <div className="w-full h-[418px] flex gap-1 overflow-hidden">
                 <span className="w-1/3 image-cover">
-                    <img
+                    <img onClick={() => handleClick(urls[3])}
                         src={urls[3]}
                         alt="Gallery image 1"
                         className="w-full h-full object-cover cursor-pointer  transition-transform"
                     />
                 </span>
                 <span className="w-2/3 h-full image-cover">
-                    <img
+                    <img onClick={() => handleClick(urls[3])}
                         src={urls[4]}
                         alt="Gallery image 1"
                         className="w-full h-full object-cover cursor-pointer  transition-transform"

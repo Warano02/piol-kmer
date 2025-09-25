@@ -59,8 +59,8 @@ const AllReviews = ({ setShowAllReviews }: { setShowAllReviews: React.Dispatch<R
     <div onClick={() => setShowAllReviews(false)} className="fixed w-screen h-screen inset-0 z-58 flex items-center justify-center ">
       <div className="fixed top-0 left-0 w-full h-full z-58 bg-[#0000006b] bg-opacity-40 flex justify-center items-center" >
         <div className="w-[50rem] h-full max-h-[calc(100vh-110px)] bg-white z-40 relative rounded-xl animation_primary" onClick={(e) => e.stopPropagation()}>
-          <header className="flex items-center py-6 px-4 cursor-pointer">
-            <button onClick={() => setShowAllReviews(false)} className="cursor-pointer">
+          <header className="flex items-center py-6 px-4 cursor-pointer" onClick={() => setShowAllReviews(false)}>
+            <button onClick={() => setShowAllReviews(false)} className="cursor-pointer p-2 rounded-full hover:bg-gray-200 transition-all">
               <Times />
             </button>
           </header>

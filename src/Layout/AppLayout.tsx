@@ -1,13 +1,14 @@
-import Modal from "@/components/Common/Modal"
+import CurrencySettings from "@/components/Home/CurrencySettings"
 import { useAppContext } from "@/hooks/useAppContext"
 import { Outlet } from "react-router-dom"
 
 function AppLayout() {
-    const { showModal } = useAppContext()
+    const { showCurrencySettings } = useAppContext()
     return (
         <div>
+            {showCurrencySettings && <CurrencySettings />}
             <Outlet />
-            {showModal && <Modal />}
+
         </div>
     )
 }

@@ -13,7 +13,7 @@ It is situated just a few steps from Hôtel du Plateau, on the street of former 
             {/* To add map later */}
             <div className={`w-full h-[414px] rounded-2xl bg-[#f8f8f8] ${isLoading && "animate-pulse"} relative`}>
                 {!isLoading && <div className="absolute top-4 left-4">
-                    {!isSearching && <button className="w-10 h-10 cursor-pointer rounded-full bg-white flex items-center justify-center text-extrabold" onClick={() => setIsSearching(true)}>
+                    {isSearching && <button className="w-10 h-10 cursor-pointer rounded-full bg-white flex items-center justify-center text-extrabold" onClick={() => setIsSearching(true)}>
                         <Search className="w-[20px] h-[20px] text-bold" />
                     </button>}
                     {/* Implement it later */}
@@ -23,6 +23,12 @@ It is situated just a few steps from Hôtel du Plateau, on the street of former 
                     </div>}
                 </div>
                 }
+                {isLoading && <div className="w-full h-full flex space-x-2 items-center justify-center">
+                    <span className="w-2 h-2 bg-black rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                    <span className="w-2 h-2 bg-black rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                    <span className="w-2 h-2 bg-black rounded-full animate-bounce"></span>
+                </div>}
+
 
                 <div className="absolute top-4 right-4 flex flex-col gap-4">
                     <button className="w-10 h-10 cursor-pointer rounded-full bg-white flex items-center justify-center text-extrabold">
