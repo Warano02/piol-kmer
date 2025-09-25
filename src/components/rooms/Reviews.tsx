@@ -3,7 +3,7 @@ import userImage from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 import { useState } from "react"
 import { Times } from "../Icons"
 function Reviews() {
-  const [showAllReviews, setShowAllReviews] = useState(true)
+  const [showAllReviews, setShowAllReviews] = useState(false)
   const text = "The accommodation is very well located, clean and corresponded in every way to the listing. Special mention to Solic for the quality of communication and a big thank you to hdhddhh ksnn jsj  b kbd bjj b dbd b"
   const length = 12
   return (
