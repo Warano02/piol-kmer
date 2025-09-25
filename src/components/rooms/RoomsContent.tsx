@@ -14,6 +14,7 @@ import AddToWhiteList from "../Common/AddToWhiteList"
 import Infos from "./Infos"
 import Date_GuestsPickerCard from "./Date_GuestsPickerCard"
 import Reviews from "./Reviews"
+import Location from "./Location"
 
 function RoomsContent({ House, setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
@@ -83,14 +84,14 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
         }
     }, [scroll]);
 
- useEffect(() => {
-    if (!ImagesRef.current) return;
-    const { bottom } = ImagesRef.current.getBoundingClientRect();
-    const onScroll = () => setShowHeader(window.scrollY > bottom);
+    useEffect(() => {
+        if (!ImagesRef.current) return;
+        const { bottom } = ImagesRef.current.getBoundingClientRect();
+        const onScroll = () => setShowHeader(window.scrollY > bottom);
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-}, [ImagesRef]);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [ImagesRef]);
 
     return (
         <>
@@ -174,7 +175,7 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
                         </div>
                     </div>
                     <Reviews />
-
+                    <Location />
                 </div>
             </section>
         </>

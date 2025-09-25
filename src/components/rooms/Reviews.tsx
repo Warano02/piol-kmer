@@ -5,22 +5,26 @@ import { Times } from "../Icons"
 function Reviews() {
   const [showAllReviews, setShowAllReviews] = useState(true)
   const text = "The accommodation is very well located, clean and corresponded in every way to the listing. Special mention to Solic for the quality of communication and a big thank you to hdhddhh ksnn jsj  b kbd bjj b dbd b"
+  const length = 12
   return (
-    <div className="w-full mt-4 mb-4 border-t">
+    <div className="w-full mt-4 mb-4 border-t border-b pb-4">
       <div className="grid grid-cols-2 gap-2 flex-wrap relative">
         {/* animate-pulse */}
-        {Array.from({ length: 4 }).map((_, index) => (
-            <ReviewCard key={index} setShowAllReviews={setShowAllReviews} text={text} pp={userImage} name={"Mr Warano"} old={"2 years on Airbnb"} date={"2 weeks ago"} period={"Stay a few nights"} showAllReviews={showAllReviews} />
+        {Array.from({ length }).slice(0, 4).map((_, index) => (
+          <ReviewCard key={index} setShowAllReviews={setShowAllReviews} text={text} pp={userImage} name={"Mr Warano"} old={"2 years on Airbnb"} date={"2 weeks ago"} period={"Stay a few nights"} showAllReviews={showAllReviews} />
         ))}
       </div>
+      {length > 4 && <button className="text-bold text-[18px] h cursor-pointer rounded-xl bg-[#f1f7f7] p-4 mt-8 hover:bg-[#f7f7f7]" onClick={() => setShowAllReviews(true)}>
+        Show all {length} reviews
+      </button>}
       {showAllReviews && <AllReviews setShowAllReviews={setShowAllReviews} />}
 
     </div>
   )
 }
 
-const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShowAllReviews,width="1/2" }: { text: string, pp: string, name: string, old: string, date: string, period: string, showAllReviews: boolean, setShowAllReviews: React.Dispatch<React.SetStateAction<boolean>> ,width?:string}) => {
-  return (<div className= {`min-w-${width} h-52  rounded-lg`}>
+const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShowAllReviews, width = "1/2" }: { text: string, pp: string, name: string, old: string, date: string, period: string, showAllReviews: boolean, setShowAllReviews: React.Dispatch<React.SetStateAction<boolean>>, width?: string }) => {
+  return (<div className={`min-w-${width} h-52  rounded-lg`}>
     <div className="w-full h-18  rounded-t-lg flex items-center p-4 gap-2">
       <Link to={""} className="w-10 h-10 rounded-full overflow-hidden relative">
         <img src={pp} alt="User Profil" className="w-full h-full object-cover" />
@@ -39,7 +43,7 @@ const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShow
       <span className="text-center text-[8px] h-full flex justify-center items-center">•</span>
       <span className="text-[14px] text-[#000000] text-bold h">
         {date}
-      </span>
+      </span>y
       <span className="text-center text-[8px] h-full flex justify-center items-center">•</span>
       <span className="text-[14px] text-[#22222222] text-bold h">{period} </span>
     </div>
