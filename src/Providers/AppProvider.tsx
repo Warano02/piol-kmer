@@ -54,11 +54,7 @@ const currencyList = [
 ];
 
 export const AppProvider = ({ children }: Props) => {
-  // const mockUser = {
-  //     id: "1225",
-  //     name: 'warano',
-  //     profile: icon
-  // }
+const AppName="Airbnb"
   const [user, setUser] = useState<User | undefined>(undefined)
   const [showPlaceFilter, setShowPlaceFilter] = useState(true)
   const [showCurrencySettings, setShowCurrencySettings] = useState(false)
@@ -97,7 +93,7 @@ export const AppProvider = ({ children }: Props) => {
 
   const result = guests.adults! > 0 ? `${guests.adults} Adult, ${guests.children} Children.` : null
 
-  const value = { showModal, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const value = { showModal,AppName, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}

@@ -53,6 +53,7 @@ export interface AppContextType extends DateSelector {
   setGuests: React.Dispatch<React.SetStateAction<GuestType>>;
   guests: GuestType;
   result: string | null; // String notation of guest list
+  AppName: string;
 }
 
 export type CurrencySettingsProps = {

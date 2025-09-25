@@ -15,6 +15,7 @@ import Infos from "./Infos"
 import Date_GuestsPickerCard from "./Date_GuestsPickerCard"
 import Reviews from "./Reviews"
 import Location from "./Location"
+import Host from "./Host"
 
 function RoomsContent({ House, setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
@@ -176,6 +177,7 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
                     </div>
                     <Reviews />
                     <Location />
+                    <Host />
                 </div>
             </section>
         </>
