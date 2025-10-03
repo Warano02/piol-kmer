@@ -3,6 +3,7 @@ import Home from "@/pages/Home"
 import NotFound from "@/pages/NotFound"
 import Rooms from "@/pages/Rooms"
 import AppLayout from "@/Layout/AppLayout"
+import  Search  from "@/pages/Search"
 
 export const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
             {
                 path: "/rooms/:id",
                 element: <Rooms />
+            },
+            {
+                path:"/s/:type?",
+                element:<Search/>
             },
             {
                 path: "*",
