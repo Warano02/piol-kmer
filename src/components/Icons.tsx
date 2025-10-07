@@ -210,4 +210,6 @@ export const ImgRight = () => {
     </svg>
   )
 }
+
+
 export default Logo

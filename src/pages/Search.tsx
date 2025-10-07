@@ -7,6 +7,7 @@ import type { Houses } from "@/types"
 import { Link } from "react-router-dom"
 import { HeartSvg, RateStars } from "@/components/Icons"
 import { useAppContext } from "@/hooks/useAppContext"
+import Thumb from "@/assets/icon/Screenshot 2025-10-07 150236.png"
 function Search() {
     const o = MockHouse[0]
 
@@ -41,7 +42,8 @@ function Search() {
                         <span className="h">
                             Over, {Home.length} homes
                         </span>
-                        <div>
+                        <div className="flex gap-1">
+                              <img src={Thumb} alt="image of thumb" className="-mt-2" />
                             <span className="h">
                                 Prices include all fees
                             </span>
