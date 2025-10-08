@@ -1,3 +1,5 @@
+"use client"
+
 import { useAppContext } from "@/hooks/useAppContext"
 import type { CheckinCheckOutProps } from "@/types/pages/Rooms"
 

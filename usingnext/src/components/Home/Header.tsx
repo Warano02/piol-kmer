@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+"use client"
 import Logo from "../Icons"
 import { useAppContext } from "@/hooks/useAppContext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -9,6 +9,7 @@ import { useState } from "react"
 import SemiHeader from "./SemiHeader"
 import HeaderSearchLayoutOne from "./HeaderSearchLayoutOne"
 import HeaderSearchLayoutTwo from "./HeaderSearchLayoutTwo"
+import Link from "next/link"
 
 interface Props { width?: string,position?:string }
 function Header({ width = "container" ,position="sticky"}: Props) {
@@ -56,9 +57,9 @@ function Header({ width = "container" ,position="sticky"}: Props) {
                 <Logo />
                 <HeaderMainSection overlay={overlay} setOverlay={setOverlay} selection={selection} setSelection={setSelection} />
                 <div className="flex gap-1">
-                    <Link to={"/host"} className="px-8 py-2 font-medium hover:bg-gray rounded-2xl">{user ? "Switch to hosting" : "Become a Host"} </Link>
+                    <Link href={"/host"} className="px-8 py-2 font-medium hover:bg-gray rounded-2xl">{user ? "Switch to hosting" : "Become a Host"} </Link>
                     {!user && <span className="w-10 h-10 rounded-full bg-gray cursor-pointer flex items-center justify-center" onClick={() => setShowCurrencySettings(pv => !pv)}><FontAwesomeIcon icon={faGlobe} className="text-gray-500" /> </span>}
-                    {user && <Link to={"/user/profile"}>
+                    {user && <Link href={"/user/profile"}>
                         <img src={user?.profile} alt="Profile pricture" className="w-10 h-10 rounded-full" />
                     </Link>}
                     <span className="w-10 h-10 rounded-full bg-gray cursor-pointer flex items-center justify-center" onClick={() => setMenu(pv => !pv)}><FontAwesomeIcon icon={faBars} className="text-gray-500" /> </span>
@@ -90,7 +91,7 @@ function Header({ width = "container" ,position="sticky"}: Props) {
 }
 
 function Li({ text, icon, to }: { text: string, icon: IconDefinition | undefined, to: string }) {
-    return <Link to={to} className="hover:bg-gray w-full ">
+    return <Link href={to} className="hover:bg-gray w-full ">
         {icon && <FontAwesomeIcon icon={icon} />}
         <span>{text} </span>
     </Link>

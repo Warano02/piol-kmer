@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   const groupsItems = [
@@ -110,7 +110,7 @@ const Footer = () => {
               <ul>
                 {el.items.map((e, i) => (
                   <li key={i} className="my-2 hover:underline cursor-pointer text-lightTextColor text-sm block py-1 md:p-0">
-                    <Link to={e.link}>{e.label} </Link>
+                    <Link href={e.link}>{e.label} </Link>
                   </li>
                 ))}
               </ul>

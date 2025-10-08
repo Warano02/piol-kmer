@@ -1,9 +1,11 @@
+"use client"
 import { textResizer } from "@/utils/style";
 import { format } from "date-fns";
 import BtnPrimary from "../ux/BtnPrimary";
 import { Search } from "../Icons";
 import homeImg from "@/assets/icon/home.avif"
 import { useAppContext } from "@/hooks/useAppContext";
+import Image from "next/image";
 
 interface Props {
     headerSearch: boolean,
@@ -28,7 +30,7 @@ function HeaderSearchLayoutOne({ headerSearch, selectedDay, selectEnd, setSelect
             className={`${headerSearch ? "header_search_layout_one_active" : "header_search_layout_one_inactive"} absolute w-max bg-white border border-borderColor rounded-full shadow px-2 flex items-center justify-center mx-auto`}
         >
             <div className="h-full px-3 py-1 flex gap-1 items-center" onClick={() => seterAll("destination")}>
-                <img src={homeImg} alt="Image of home" width={40} />
+                <Image src={homeImg} alt="Image of home" width={40} />
                 <span className="block text-sm text-gray-700 font-semibold cursor-pointer">
                     {textResizer(destination || "", "Ngaounderer".length) || "Anywhere"}
                 </span>

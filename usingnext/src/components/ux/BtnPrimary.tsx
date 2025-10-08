@@ -1,12 +1,11 @@
 import { useAppContext } from "@/hooks/useAppContext";
 import { classNames } from "@/utils/style";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { style?: Record<string, string>, dark?: boolean, children: React.ReactNode, rounded?: boolean }
 
 function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) {
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const { destination, selectedDay, selectedEnd } = useAppContext()
+    const { destination, selectedDay,navigate, selectedEnd } = useAppContext()
     const animate = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (buttonRef.current) {
             buttonRef.current.style.backgroundPosition = `
@@ -14,8 +13,7 @@ function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) 
                 }%`;
         }
     };
-    const navigate = useNavigate()
-
+   
     const cliqueHandler = () => {
         const url = `/search?destination=${destination || "any"}${selectedDay && selectedEnd ? "&check-in=" + new Date(selectedDay) + "&check-out=" + new Date(selectedEnd) : ""}`
         navigate(url)

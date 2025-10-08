@@ -1,3 +1,4 @@
+"use client"
 import { useRef } from "react";
 import { BarLeft } from "./HeaderSearchLayoutOne";
 import { format } from "date-fns";

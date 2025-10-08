@@ -1,3 +1,5 @@
+"use client"
+
 import type { DatePickerType } from "@/types"
 import { add, eachDayOfInterval, endOfMonth, format, parse, startOfToday } from "date-fns"
 import { useState } from "react";

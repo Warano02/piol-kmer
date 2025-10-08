@@ -1,3 +1,4 @@
+"use client"
 import type { GuessPickerType, GuestCardType, Menu1Type } from "@/types"
 import { Minus, Plus } from "../Icons";
 import { useAppContext } from "@/hooks/useAppContext";

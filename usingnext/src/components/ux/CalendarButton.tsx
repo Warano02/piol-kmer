@@ -1,3 +1,4 @@
+"use client"
 import { useAppContext } from "@/hooks/useAppContext";
 import type { CalendarButtonType } from "@/types"
 import { classNameInit, classNames } from "@/utils/style"

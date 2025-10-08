@@ -27,6 +27,7 @@ type WhiteListElement = {
 export type WhiteList = WhiteListElement[] | null;
 
 export interface AppContextType extends DateSelector {
+  navigate:(link:string)=>void;
   user: User | undefined;
   setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
   currency: string; // the currency of the app

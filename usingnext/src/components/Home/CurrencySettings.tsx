@@ -1,3 +1,4 @@
+"use client"
 import { useAppContext } from "@/hooks/useAppContext"
 import type { CurrencySettingsProps } from "@/types"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"

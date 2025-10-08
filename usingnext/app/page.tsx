@@ -2,7 +2,7 @@ import Footer from "../src/components/Footer"
 import Header from "../src/components/Home/Header"
 import HouseCarrousel from "../src/components/Home/HouseCarrousel"
 // import SingleHouse from "@/components/Home/SingleHouse"
-import MockHouse from "@/mocks/houses.json"
+import MockHouse from "../src/mocks/houses.json"
 
 function Home() {
 

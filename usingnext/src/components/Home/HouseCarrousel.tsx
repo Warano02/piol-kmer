@@ -1,8 +1,9 @@
+"use client"
 import { useRef } from "react";
 import SingleHouse from "./SingleHouse";
-import { Link } from "react-router-dom";
 import { ArrayLeftHome, ArrayRightHome } from "../Icons";
 import type { Houses } from "@/types";
+import Link from "next/link";
 interface Props {
   city?: string,
   Houses: Houses[]
@@ -20,7 +21,7 @@ function HouseCarrousel({ city = "Younde", Houses }: Props) {
   return (
     <div className="w-full relative">
       <div className="w-full h-11  flex justify-between px-[24px] ">
-        <Link to={`/`} className="h text-2xl flex justify-center items-center">
+        <Link  href={`/`} className="h text-2xl flex justify-center items-center">
           <span className="h">  Stay near in {city} </span> <ArrayRightHome />
         </Link>
 

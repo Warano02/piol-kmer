@@ -1,5 +1,7 @@
+"use client"
 import { AppContext } from "@/context/AppContext"
 import type { GuestType, Houses, User, WhiteList } from "@/types"
+import { useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react"
 // import icon from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 type Props = { children: ReactNode }
@@ -54,6 +56,12 @@ const currencyList = [
 ];
 
 export const AppProvider = ({ children }: Props) => {
+  const router = useRouter()
+
+
+  const navigate=(link:string)=>{
+router.push(link)
+  }
 const AppName="Airbnb"
   const [user, setUser] = useState<User | undefined>(undefined)
   const [showPlaceFilter, setShowPlaceFilter] = useState(true)
@@ -93,7 +101,7 @@ const AppName="Airbnb"
 
   const result = guests.adults! > 0 ? `${guests.adults} Adult, ${guests.children} Children.` : null
 
-  const value = { showModal,AppName, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
+  const value = { showModal,AppName,navigate, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, formatPrice, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, currencyList, currency, setCurrency, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}
