@@ -1,14 +1,20 @@
+"use client"
 import Header from "@/components/Home/Header"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import MocksHouseData from "@/mocks/houses.json"
 import type { Houses } from "@/types"
 import RoomsContent from "@/components/rooms/RoomsContent"
 import Footer from "@/components/Footer"
 import Loader from "@/components/Loaders/Loader"
 
-function Rooms() {
-  const { id } = useParams()
+// change when api will be created 
+import MocksHouseData from "@/mocks/houses.json"
+
+interface RoomProps{
+    id:string
+}
+
+function Rooms(params:RoomProps) {
+  const { id } = params
   const [isLoading, setIsLoading] = useState(true)
   const [Home, setHome] = useState<Houses | null>(null)
   const [hider, setHider] = useState(true)

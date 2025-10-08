@@ -1,9 +1,10 @@
+"use client"
 import type { Houses } from "@/types"
 import { useState } from "react";
 import { ImgLeft, ImgRight, Times } from "../Icons";
 import { useAppContext } from "@/hooks/useAppContext";
 import { Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 function Infos({ House }: { House: Houses }) {
   const [amenitiesModal, setAmenitiesModal] = useState(false);
@@ -23,7 +24,7 @@ function Infos({ House }: { House: Houses }) {
           {House.capacity?.bedrooms} bedrooms {" · "} {House.capacity?.bed}{" "}
           beds
         </div>
-        <Link to={""} className="w-full h-24 rounded-2xl border mt-8 flex justify-between items-center px-4">
+        <Link  href={""} className="w-full h-24 rounded-2xl border mt-8 flex justify-between items-center px-4">
           <div className="flex gap-1 ">
             <ImgLeft />
             <h1 className="h text-xl max-w-[80px] mt-[-14px] text-center">Guest Favorite</h1>

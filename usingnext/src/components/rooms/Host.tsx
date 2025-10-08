@@ -1,8 +1,9 @@
+"use client"
 import React from 'react'
 import { BriefcaseBusiness, PartyPopper, ShieldCheck, Star } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { useAppContext } from '@/hooks/useAppContext'
 import { Secure } from '../Icons'
+import Link from 'next/link'
 function Host() {
     const {AppName}=useAppContext()
     const img = "https://a0.muscache.com/im/pictures/user/User/original/1c9147e8-be36-4b5b-967c-ef7f02a62d06.jpeg?im_w=240"
@@ -11,7 +12,7 @@ function Host() {
             <h1 className='h text-xl'>Meet your host</h1>
             <div className='w-full flex gap-2 mt-8'>
                 <div className='w-[25.75em] px-3 '>
-                    <Link to={""} className='w-full h-[260px] rounded-2xl bg-white shadow-md flex gap-2 justify-center items-center'>
+                    <Link href={""} className='w-full h-[260px] rounded-2xl bg-white shadow-md flex gap-2 justify-center items-center'>
                         <div className='w-[128px] h-full fle'>
                             <div className='flex relative w-28 h-28  '>
                                 <img src={img} alt="profil of the host" className='rounded-full w-full h-full' />
@@ -55,7 +56,7 @@ function Host() {
                         <h2 className='text-[18px] text-bold text-black-secondary p2 '>Response rate : 100%</h2>
                         <h2 className='text-[18px] text-bold text-black-secondary p2 '>Response within an hour </h2>
                     </div>
-                    <Link to={""} className='px-8 py-4 rounded-2xl bg-gray-200 h'>
+                    <Link href={""} className='px-8 py-4 rounded-2xl bg-gray-200 h'>
                         Message host
                     </Link>
                     <div className='w-full mt-8 h-0.5 bg-gray'></div>

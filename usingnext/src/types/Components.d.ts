@@ -4,7 +4,14 @@ export type CarrouselImagesProps = {
   link: string;
   data: SingleHome[] | undefined;
 };
-
+export type StaticImageData = {
+  src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string; // Optional, for blur-up effect
+  blurWidth?: number;   // Optional
+  blurHeight?: number;  // Optional
+};
 export type CustomImageProps = {
   imageSrc: string;
   alt: string;

@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom"
+"use client"
 import userImage from "@/assets/icon/Capture d'écran 2024-09-11 184648.png"
 import { useState } from "react"
 import { Times } from "../Icons"
+import Link from "next/link"
+import Image from "next/image"
+import { StaticImageData } from "@/types"
 function Reviews() {
   const [showAllReviews, setShowAllReviews] = useState(false)
   const text = "The accommodation is very well located, clean and corresponded in every way to the listing. Special mention to Solic for the quality of communication and a big thank you to hdhddhh ksnn jsj  b kbd bjj b dbd b"
@@ -23,11 +26,11 @@ function Reviews() {
   )
 }
 
-const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShowAllReviews, width = "1/2" }: { text: string, pp: string, name: string, old: string, date: string, period: string, showAllReviews: boolean, setShowAllReviews: React.Dispatch<React.SetStateAction<boolean>>, width?: string }) => {
+const ReviewCard = ({ text, pp, name, old, date, period, showAllReviews, setShowAllReviews, width = "1/2" }: { text: string, pp: string|StaticImageData, name: string, old: string, date: string, period: string, showAllReviews: boolean, setShowAllReviews: React.Dispatch<React.SetStateAction<boolean>>, width?: string }) => {
   return (<div className={`min-w-${width} h-52  rounded-lg`}>
     <div className="w-full h-18  rounded-t-lg flex items-center p-4 gap-2">
-      <Link to={""} className="w-10 h-10 rounded-full overflow-hidden relative">
-        <img src={pp} alt="User Profil" className="w-full h-full object-cover" />
+      <Link  href={""} className="w-10 h-10 rounded-full overflow-hidden relative">
+        <Image src={pp} alt="User Profil" className="w-full h-full object-cover" />
       </Link>
       <div className="flex flex-col">
         <span className="text-[16px] text-semibold h">{name} </span>

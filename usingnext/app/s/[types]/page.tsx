@@ -4,10 +4,11 @@ import { Minimize2, Minus, Plus } from "lucide-react"
 import { useEffect, useState } from "react"
 import MockHouse from "@/mocks/houses.json"
 import type { Houses } from "@/types"
-import { Link } from "react-router-dom"
 import { HeartSvg, RateStars } from "@/components/Icons"
 import { useAppContext } from "@/hooks/useAppContext"
 import Thumb from "@/assets/icon/Screenshot 2025-10-07 150236.png"
+import Image from "next/image"
+import Link from "next/link"
 function Search() {
     const o = MockHouse[0]
 
@@ -43,7 +44,7 @@ function Search() {
                             Over, {Home.length} homes
                         </span>
                         <div className="flex gap-1">
-                              <img src={Thumb} alt="image of thumb" className="-mt-2" />
+                              <Image src={Thumb} alt="image of thumb" className="-mt-2" />
                             <span className="h">
                                 Prices include all fees
                             </span>
@@ -129,7 +130,7 @@ const SingleHome = ({ Home }: { Home: Houses }) => {
         setHouse(Home)
     }, [])
     return <>
-        {house && <Link to={`/rooms/${house._id}`} className="ml-4 relative w-[211px] h-[282px] ">
+        {house && <Link href={`/rooms/${house._id}`} className="ml-4 relative w-[211px] h-[282px] ">
             <div className="relative w-full h-[195px]">
                 <img src={house.icon || house.images[0].urls[0]} alt="" className="absolute h-full object-cover rounded-3xl" />
                 <div className="relative w-full h-[40px]  z-1 flex items-center px-3 ">

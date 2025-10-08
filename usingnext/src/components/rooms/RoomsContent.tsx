@@ -1,3 +1,4 @@
+"use client"
 import ImageViewer from "./ImageViewer"
 import { useEffect, useRef, useState } from "react"
 
@@ -5,7 +6,6 @@ import type { RoomsContentProps } from "@/types/pages/Rooms"
 import { useAppContext } from "@/hooks/useAppContext"
 import { Stars } from "lucide-react"
 import BtnPrimary from "../ux/BtnPrimary"
-import { Link } from "react-router-dom"
 import { ArrayLeftHome } from "../Icons"
 import ImagePreviewer from "./ImagePreviewer"
 import ImagePreviewPage from "./ImagePreviewPage"
@@ -17,6 +17,7 @@ import Reviews from "./Reviews"
 import Location from "./Location"
 import Host from "./Host"
 import SingleSection from "./SingleSection"
+import Link from "next/link"
 
 function RoomsContent({ House, setHider }: RoomsContentProps) {
     const { formatPrice } = useAppContext()
@@ -145,7 +146,7 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
 
             <main className="w-full relative block lg:hidden">
                 <nav className="absolute top-0 left-0 w-full p-2 z-20 flex items-center justify-between">
-                    <Link to={"/"} className="w-9 h-9 flex items-center justify-center rounded-full bg-white">
+                    <Link href={"/"} className="w-9 h-9 flex items-center justify-center rounded-full bg-white">
                         <ArrayLeftHome />
                     </Link>
                     <div className="w-full min-h-[30vh]">

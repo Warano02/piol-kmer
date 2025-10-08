@@ -1,14 +1,15 @@
 import img1 from "@/assets/icon/78b7687c-5acf-4ef8-a5ea-eda732ae3b2f.avif"
 import img2 from "@/assets/icon/b4005b30-79ff-4287-860c-67829ecd7412.avif"
 import { BadgeCheck, KeyRound, Map, MessageCircle, Sparkles } from "lucide-react"
+import Image from "next/image"
 function SingleSection() {
     const rating = 5
     return (
         <section className="w-full py-8 border-t">
             <div className="w-full h-36 flex justify-center items-center">
-                <img src={img1} alt="image to present rating" className="h-full" />
+                <Image src={img1} alt="image to present rating" className="h-full" />
                 <h1 className="text-4xl lg:text-8xl h lg:mt-[-90px] ">{rating.toFixed(1)} </h1>
-                <img src={img2} alt="image to present rating" className="h-full" />
+                <Image src={img2} alt="image to present rating" className="h-full" />
             </div>
             <div className="w-full h-34 flex justify-center items-center flex-col">
                 <h1 className="h text-2xl">Guest favorite</h1>

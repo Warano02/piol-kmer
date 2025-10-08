@@ -1,3 +1,4 @@
+"use client"
 import { Minimize2, Minus, Plus, Search } from "lucide-react"
 import React, { useState } from "react"
 
