@@ -15,7 +15,7 @@ function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) 
     };
    
     const cliqueHandler = () => {
-        const url = `/search?destination=${destination || "any"}${selectedDay && selectedEnd ? "&check-in=" + new Date(selectedDay) + "&check-out=" + new Date(selectedEnd) : ""}`
+        const url = `/s?destination=${destination || "any"}${selectedDay && selectedEnd ? "&check-in=" + new Date(selectedDay) + "&check-out=" + new Date(selectedEnd) : ""}`
         navigate(url)
     }
 
