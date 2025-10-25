@@ -1,3 +1,4 @@
+"use client";
 import { useAppContext } from "@/hooks/useAppContext";
 import { classNames } from "@/utils/style";
 import { useRef } from "react";
@@ -29,7 +30,7 @@ function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) 
             onClick={() => cliqueHandler()}
             className={classNames(
                 `${rounded ? "btn-primary-rounded" : "btn-primary"} ${dark ? "dark-bg" : "light-bg"
-                } text-sm md:text-md lg:text-xl px-4 py-2 md:py-3 flex cursor-pointer`
+                } text-sm md:text-md lg:text-xl px-4 py-2 md:py-3 flex cursor-pointer justify-center items-center`
             )}
             {...rest}
         >

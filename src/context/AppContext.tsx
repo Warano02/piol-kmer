@@ -1,3 +1,4 @@
+"use client"
 import type { AppContextType } from "@/types";
 import { createContext } from "react";
 

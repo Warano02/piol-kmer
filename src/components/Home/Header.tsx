@@ -67,7 +67,7 @@ function Header({ width = "container" ,position="sticky"}: Props) {
                         {user && list1.map(el => <Li text={el.text} icon={el.icon} to={el.to} />)}
                         <Li text="Help Center" to="/faq" icon={faCircleQuestion} />
                         <hr />
-                        {list2.map(el => <Li text={el.text} icon={el.icon} to={el.to} />)}
+                        {list2.map((el,i) => <Li key={i} text={el.text} icon={el.icon} to={el.to} />)}
                         <hr />
                         {user ? <div className="hover:bg-gray w-full cursor-pointer">Logout</div> : <div className="hover:bg-gray w-full cursor-pointer">Log in or sign up</div>}
 
