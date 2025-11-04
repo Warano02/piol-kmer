@@ -57,7 +57,7 @@ export default function Page() {
         Which of these best describes your place?
       </h1>
 
-      <div className="w-2/3 h-2/3 grid grid-cols-2 md:grid-cols-4  gap-4 overflow-y-auto hide-scrollbar p-4">
+      <div className="w-2/3 h-2/3 grid grid-cols-2 md:grid-cols-4  overflow-y-auto hide-scrollbar p-4">
         {items.map((el, idx) => (
           <TypeOfHouse
             key={idx}
