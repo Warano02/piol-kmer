@@ -1,9 +1,6 @@
-"use client"
-import { useAppContext } from "@/hooks/useAppContext"
-
 function page() {
     return (
-        <div className="w-full h-[470px]  my-2 gap-4 flex flex-col md:flex-row px-2">
+        <div className="w-full h-full  my-2 gap-4 flex flex-col md:flex-row px-2">
             <div className="flex-1 h-full  flex justify-center px-8 flex-col gap-5 ">
                 <h3 className="font-bold h text-2xl text-gray-700">Step 1</h3>
                 <h1 className="text-5xl font-bold h">Tell us about your place</h1>

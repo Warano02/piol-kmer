@@ -20,11 +20,9 @@ function Host({ children }: { children: React.ReactNode }) {
                     Exit
                 </button>
             </header>
-            <main>
+            <main className="w-full h-[470px]">
                 {children}
             </main>
-
-
             {
                 isHome ? (<footer className="w-full h-22 flex items-center justify-end px-4 border-4 fixed bottom-0">
                     <div className="w-52 h-full flex justify-center items-center">

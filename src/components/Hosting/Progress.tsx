@@ -13,8 +13,8 @@ function Progress() {
                     <div className={`w-1/3 h-full bg-gray`}></div>
                 </div>
                 <div className="w-full h-[80px] flex justify-between items-center px-8">
-                    <button onClick={() => handleBack} className="px-8 py-4 rounded-2xl underline font-bold  h cursor-pointer">Back</button>
-                    <button onClick={() => handleNextStep} className="px-6 py-3 rounded-xl bg-black text-white text-xl font-bold cursor-pointer h">
+                    <button onClick={ handleBack} className="px-8 py-4 rounded-2xl underline font-bold  h cursor-pointer">Back</button>
+                    <button onClick={ handleNextStep} className="px-6 py-3 rounded-xl bg-black text-white text-xl font-bold cursor-pointer h">
                         Next
                     </button>
                 </div>
