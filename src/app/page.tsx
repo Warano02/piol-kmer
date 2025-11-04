@@ -1,8 +1,8 @@
-import Footer from "../src/components/Footer"
-import Header from "../src/components/Home/Header"
-import HouseCarrousel from "../src/components/Home/HouseCarrousel"
+import Footer from "@/components/Footer"
+import Header from "@/components/Home/Header"
+import HouseCarrousel from "@/components/Home/HouseCarrousel"
 // import SingleHouse from "@/components/Home/SingleHouse"
-import MockHouse from "../src/mocks/houses.json"
+import MockHouse from "@/mocks/houses.json"
 
 function Home() {
 

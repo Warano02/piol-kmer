@@ -2,11 +2,11 @@
 import { useAppContext } from "@/hooks/useAppContext";
 import { classNames } from "@/utils/style";
 import { useRef } from "react";
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { style?: Record<string, string>, dark?: boolean, children: React.ReactNode, rounded?: boolean }
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { style?: Record<string, string>, dark?: boolean, children: React.ReactNode, link?: string | null, rounded?: boolean }
 
-function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) {
+function BtnPrimary({ rounded = false, dark, children, style, link=null, ...rest }: Props) {
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const { destination, selectedDay,navigate, selectedEnd } = useAppContext()
+    const { destination, selectedDay, navigate, selectedEnd } = useAppContext()
     const animate = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (buttonRef.current) {
             buttonRef.current.style.backgroundPosition = `
@@ -14,9 +14,9 @@ function BtnPrimary({ rounded = false, dark, children, style, ...rest }: Props) 
                 }%`;
         }
     };
-   
+
     const cliqueHandler = () => {
-        const url = `/s?destination=${destination || "any"}${selectedDay && selectedEnd ? "&check-in=" + new Date(selectedDay) + "&check-out=" + new Date(selectedEnd) : ""}`
+        const url = link || `/s?destination=${destination || "any"}${selectedDay && selectedEnd ? "&check-in=" + new Date(selectedDay) + "&check-out=" + new Date(selectedEnd) : ""}`
         navigate(url)
     }
 
