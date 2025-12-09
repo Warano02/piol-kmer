@@ -57,7 +57,7 @@ function Header({ width = "container" ,position="sticky"}: Props) {
                 <Logo />
                 <HeaderMainSection overlay={overlay} setOverlay={setOverlay} selection={selection} setSelection={setSelection} />
                 <div className="flex gap-1">
-                    <Link href={"/host"} className="px-8 py-2 font-medium hover:bg-gray rounded-2xl">{user ? "Switch to hosting" : "Become a Host"} </Link>
+                    <Link href={"/host"} className="hidden md:block px-8 py-2 font-medium hover:bg-gray rounded-2xl ">{user ? "Switch to hosting" : "Become a Host"} </Link>
                     {!user && <span className="w-10 h-10 rounded-full bg-gray cursor-pointer flex items-center justify-center" onClick={() => setShowCurrencySettings(pv => !pv)}><FontAwesomeIcon icon={faGlobe} className="text-gray-500" /> </span>}
                     {user && <Link href={"/user/profile"}>
                         <img src={user?.profile} alt="Profile pricture" className="w-10 h-10 rounded-full" />
