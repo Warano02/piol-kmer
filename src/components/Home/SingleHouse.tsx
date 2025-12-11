@@ -1,13 +1,15 @@
 "use client"
+import { useCurrency } from "@/hooks/useCurrency"
 import { HeartSvg, RateStars } from "../Icons"
 import { useAppContext } from "@/hooks/useAppContext"
 import type { Houses } from "@/types"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-function SingleHouse({data}:{data: Houses}) {
-    const { formatPrice, whiteList, setShowWhiteListCreator } = useAppContext()
+function SingleHouse({ data }: { data: Houses }) {
+    const { whiteList, setShowWhiteListCreator } = useAppContext()
     const [house, setHouse] = useState<Houses>()
+    const { formatPrice } = useCurrency()
     const addToFavorite = async (id: string) => {
         setHouse(prev => {
             if (!prev) return prev; // rien à faire si prev est null
@@ -27,7 +29,7 @@ function SingleHouse({data}:{data: Houses}) {
         setHouse(data)
     }, [data])
     return house && (
-        <Link  href={`/rooms/${house._id}`} className="ml-4 relative w-[211px] h-[252px] ">
+        <Link href={`/rooms/${house._id}`} className="ml-4 relative w-[211px] h-[252px] ">
             <div className="relative w-full h-[195px]">
                 <img src={house.icon || house.images[0].urls[0]} alt="" className="absolute h-full object-cover rounded-3xl" />
                 <div className="relative w-full h-[40px]  z-1 flex items-center px-3 ">
