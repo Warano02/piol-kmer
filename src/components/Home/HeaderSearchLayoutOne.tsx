@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { textResizer } from "@/utils/style";
 import { format } from "date-fns";
 import BtnPrimary from "../ux/BtnPrimary";
 import { Search } from "../Icons";
-import homeImg from "@/assets/icon/home.avif"
+import homeImg from "@/assets/icon/home.png"
 import { useAppContext } from "@/hooks/useAppContext";
 import Image from "next/image";
 
