@@ -1,9 +1,9 @@
-import { useAppContext } from "@/hooks/useAppContext";
 import { Star } from "lucide-react";
 import BtnPrimary from "../ux/BtnPrimary";
 import Date from "./Date";
 import Guests from "./Guests";
 import { useState } from "react";
+import { useCurrency } from "@/hooks/useCurrency";
 
 interface Date_GuestsPickerCardProps {
     price: number;
@@ -12,7 +12,7 @@ interface Date_GuestsPickerCardProps {
 }
 
 function Date_GuestsPickerCard({ price, rating, reviews }: Date_GuestsPickerCardProps) {
-    const { formatPrice } = useAppContext()
+    const { formatPrice } = useCurrency()
     const [tab, setTab] = useState<"date" | "guests" | null>(null)
     return (
         <div className="sticky top-28 left-0 min-w-[25rem]">

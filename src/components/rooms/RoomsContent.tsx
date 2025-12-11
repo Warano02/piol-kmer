@@ -3,7 +3,6 @@ import ImageViewer from "./ImageViewer"
 import { useEffect, useRef, useState } from "react"
 
 import type { RoomsContentProps } from "@/types/pages/Rooms"
-import { useAppContext } from "@/hooks/useAppContext"
 import { Stars } from "lucide-react"
 import BtnPrimary from "../ux/BtnPrimary"
 import { ArrayLeftHome } from "../Icons"
@@ -18,9 +17,10 @@ import Location from "./Location"
 import Host from "./Host"
 import SingleSection from "./SingleSection"
 import Link from "next/link"
+import { useCurrency } from "@/hooks/useCurrency"
 
 function RoomsContent({ House, setHider }: RoomsContentProps) {
-    const { formatPrice } = useAppContext()
+    const { formatPrice } = useCurrency()
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const [showHouseImages, setShowHouseImages] = useState(false)
     const [showNewPage, setShowNewPage] = useState(false)
