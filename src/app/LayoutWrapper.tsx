@@ -1,6 +1,6 @@
 "use client"
 import { ReactNode } from "react"
-import Provider from "@/Providers/Provider"
+import Provider from "@/lib/Providers/Provider"
 import { useAppContext } from "@/hooks/useAppContext"
 import CurrencySettings from "@/components/Home/CurrencySettings"
 
