@@ -1,0 +1,1 @@
+The project using next-intl for better referencement and multilingual
