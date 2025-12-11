@@ -7,22 +7,14 @@ import { useState, type ReactNode } from "react"
 type Props = { children: ReactNode }
 
 
-const languageList = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
-  { code: "it", label: "Italiano", flag: "🇮🇹" },
-]
 export const AppProvider = ({ children }: Props) => {
   const router = useRouter()
 
 
-  const navigate=(link:string)=>{
-router.push(link)
+  const navigate = (link: string) => {
+    router.push(link)
   }
-const AppName="Airbnb"
+  const AppName = "Airbnb"
   const [user, setUser] = useState<User | undefined>(undefined)
   const [showPlaceFilter, setShowPlaceFilter] = useState(true)
   const [showCurrencySettings, setShowCurrencySettings] = useState(false)
@@ -35,7 +27,7 @@ const AppName="Airbnb"
   const [whiteList, setWhiteList] = useState<WhiteList>(null)
   const [showWhiteListCreator, setShowWhiteListCreator] = useState(false)
   const [showModal, setShowModal] = useState(false)
- 
+
 
   const addGuesFavorite = async (id: string) => {
     const home = Homes.find(el => el._id === id)
@@ -57,7 +49,7 @@ const AppName="Airbnb"
 
   const result = guests.adults! > 0 ? `${guests.adults} Adult, ${guests.children} Children.` : null
 
-  const value = { showModal,AppName,navigate, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, setShowCurrencySettings }
+  const value = { showModal, AppName, navigate, setShowModal, result, selectedEnd, showWhiteListCreator, setShowWhiteListCreator, guests, whiteList, createWhiteList, setWhiteList, setGuests, setSelectedEnd, selectedDay, setSelectedDay, guesFavorite, destination, setDestination, Homes, setHomes, addGuesFavorite, setGuesFavorite, user, setUser, showPlaceFilter, setShowPlaceFilter, showCurrencySettings, setShowCurrencySettings }
 
   return <AppContext.Provider value={value}>
     {children}
