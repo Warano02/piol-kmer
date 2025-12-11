@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Basics – Host Setup",
+  description: "Configure your basic hosting information"
+}
+
 function page() {
     return (
         <div className="w-full h-full  my-2 gap-4 flex flex-col md:flex-row px-2">
