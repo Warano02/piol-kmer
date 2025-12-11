@@ -6,12 +6,6 @@ export type User = {
   name: string;
   profile: string;
 };
-export type Currency = {
-  name: string;
-  abr: string;
-  signe: string;
-  ratePerUSD: number;
-};
 
 export interface DateSelector {
   selectedDay: string | Date;
@@ -30,22 +24,17 @@ export interface AppContextType extends DateSelector {
   navigate:(link:string)=>void;
   user: User | undefined;
   setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
-  currency: string; // the currency of the app
-  setCurrency: React.Dispatch<React.SetStateAction<string>>;
   destination: string | null; // where user find home
   setDestination: React.Dispatch<React.SetStateAction<string | null>>;
   showCurrencySettings: boolean;
   setShowCurrencySettings: React.Dispatch<React.SetStateAction<boolean>>;
   whiteList: WhiteList;
   setWhiteList: React.Dispatch<React.SetStateAction<WhiteList>>;
-  currencyList: Currency[];
   setShowWhiteListCreator: React.Dispatch<React.SetStateAction<boolean>>;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   showModal: boolean;
-  currencyList: Currency[];
   showPlaceFilter: boolean;
   setShowPlaceFilter: React.Dispatch<React.SetStateAction<boolean>>;
-  formatPrice: (price: number) => string;
   addGuesFavorite: (id: string) => void;
   guesFavorite: SingleHome[];
   Homes: SingleHome[];
