@@ -9,7 +9,7 @@ import { useLanguage } from "@/hooks/useLanguage"
 
 
 
-function CurrencySettings() {
+function Settings() {
   const { currencyList, currency, setCurrency } = useCurrency()
   const { setShowCurrencySettings } = useAppContext()
   const { languageList, language, setLanguage } = useLanguage()
@@ -96,4 +96,4 @@ function LanguageOption({ code, label, flag, isSelected, onClick }: ILanguage) {
 }
 
 
-export default CurrencySettings
+export default Settings

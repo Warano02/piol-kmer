@@ -2,13 +2,13 @@
 import { ReactNode } from "react"
 import Provider from "@/lib/Providers/Provider"
 import { useAppContext } from "@/hooks/useAppContext"
-import CurrencySettings from "@/components/Home/CurrencySettings"
+import Settings from "@/components/Home/Settings"
 
 function LayoutContent() {
   const { showCurrencySettings } = useAppContext()
   return (
     <>
-      {showCurrencySettings && <CurrencySettings />}
+      {showCurrencySettings && <Settings />}
     </>
   )
 }
