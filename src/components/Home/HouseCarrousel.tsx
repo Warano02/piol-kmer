@@ -5,10 +5,10 @@ import { ArrayLeftHome, ArrayRightHome } from "../Icons";
 import type { Houses } from "@/types";
 import Link from "next/link";
 interface Props {
-  city?: string,
+  title?: string,
   Houses: Houses[]
 }
-function HouseCarrousel({ city = "Younde", Houses }: Props) {
+function HouseCarrousel({ title = " Stay near in Younde", Houses }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (dir: 'left' | "right") => {
     if (!scrollRef.current) return;
@@ -20,9 +20,9 @@ function HouseCarrousel({ city = "Younde", Houses }: Props) {
   };
   return (
     <div className="w-full relative">
-      <div className="w-full h-11  flex justify-between px-[24px] ">
+      <div className="w-full h-11  flex justify-between px-6 ">
         <Link  href={`/`} className="h text-2xl flex justify-center items-center">
-          <span className="h">  Stay near in {city} </span> <ArrayRightHome />
+          <span className="h">{title} </span> <ArrayRightHome />
         </Link>
 
         <div className="flex justify-center w-16 items-center h-8 ">

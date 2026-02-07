@@ -14,8 +14,11 @@ function Home() {
   return (
     <div className="flex flex-col gap-1">
       <Header width="200" />
-      {/* <SingleHouse data={MockHouse[0]}/> */}
+      <HouseCarrousel Houses={Houses} title="Guest Favorite" />
+      <HouseCarrousel Houses={Houses} title="Your whitelist" />
       <HouseCarrousel Houses={Houses} />
+      <HouseCarrousel Houses={Houses} title="Stay near in Ngaoundere" />
+      <HouseCarrousel Houses={Houses} title="Stay Near in Buea" />
       <Footer />
     </div>
   )

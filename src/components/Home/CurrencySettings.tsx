@@ -68,7 +68,7 @@ function Currency({ name, abr, signe, isSelected, onClick }: CurrencySettingsPro
   return (
     <div
       onClick={onClick}
-      className={`flex flex-col ${isSelected ? 'border' : ''} rounded p-2 cursor-pointer hover:bg-gray-100 transition w-[200px]`}
+      className={`flex flex-col ${isSelected ? 'border' : ''} rounded p-2 cursor-pointer hover:bg-gray-100 transition w-50`}
     >
       <span>{name}</span>
       <span className="text-muted-foreground text-sm">{abr} - {signe}</span>

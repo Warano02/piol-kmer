@@ -10,6 +10,7 @@ import { useAppContext } from "@/hooks/useAppContext"
 import Thumb from "@/assets/icon/Screenshot 2025-10-07 150236.png"
 import Image from "next/image"
 import Link from "next/link"
+import { useCurrency } from "@/hooks/useCurrency"
 function Search() {
     const o = MockHouse[0]
 
@@ -38,14 +39,14 @@ function Search() {
     return (
         <>
             <Header />
-            <section className="w-full p-4 max-h-[520px] flex justify-between gap-1 overflow-y-auto hide-scrollbar mb-4">
+            <section className="w-full p-4 max-h-130 flex justify-between gap-1 overflow-y-auto hide-scrollbar mb-4">
                 <div className="flex-1 px-2 py-4">
                     <div className="w-full flex justify-between my-2 px-4">
                         <span className="h">
                             Over, {Home.length} homes
                         </span>
                         <div className="flex gap-1">
-                              <Image src={Thumb} alt="image of thumb" className="-mt-2" />
+                            <Image src={Thumb} alt="image of thumb" className="-mt-2" />
                             <span className="h">
                                 Prices include all fees
                             </span>
@@ -83,11 +84,11 @@ function Search() {
                     }
                 </div>
                 <div className="sticky top-1/2 -translate-y-1/2">
-                    <div className="relative w-[474px] h-[508px] rounded-2xl bg-secondary">
+                    <div className="relative w-118.5 h-127 rounded-2xl bg-secondary">
                         <div className="absolute top-4 right-4 flex flex-col gap-4">
                             <button className="w-10 h-10 cursor-pointer rounded-full bg-white flex items-center justify-center text-extrabold">
 
-                                <Minimize2 className="w-[20px] h-[20px] text-bold text-[#4e4c4c] " />
+                                <Minimize2 className="w-5 h-5 text-bold text-[#4e4c4c] " />
                             </button>
 
                             <div className="w-12 h-23 rounded-4xl bg-white relative flex flex-col   shadow-md overflow-hidden">
@@ -110,7 +111,8 @@ function Search() {
     )
 }
 const SingleHome = ({ Home }: { Home: Houses }) => {
-    const { formatPrice, whiteList, setShowWhiteListCreator } = useAppContext()
+    const { whiteList, setShowWhiteListCreator } = useAppContext()
+    const { formatPrice } = useCurrency()
     const [house, setHouse] = useState<Houses>()
     const addToFavorite = async (id: string) => {
         setHouse(prev => {
@@ -127,16 +129,17 @@ const SingleHome = ({ Home }: { Home: Houses }) => {
             console.log("Error while executing favorite action " + e)
         }
     }
+    
     useEffect(() => {
         setHouse(Home)
     }, [])
     return <>
-        {house && <Link href={`/rooms/${house._id}`} className="ml-4 relative w-[211px] h-[282px] ">
-            <div className="relative w-full h-[195px]">
+        {house && <Link href={`/rooms/${house._id}`} className="ml-4 relative w-52.75 h-70.5 ">
+            <div className="relative w-full h-48.75">
                 <img src={house.icon || house.images[0].urls[0]} alt="" className="absolute h-full object-cover rounded-3xl" />
-                <div className="relative w-full h-[40px]  z-1 flex items-center px-3 ">
+                <div className="relative w-full h-10  z-1 flex items-center px-3 ">
                     {
-                        house.guestFavorite && <div className="w-[105px] h-[32px] bg-[#faf6efc2] rounded-2xl flex justify-center items-center">
+                        house.guestFavorite && <div className="w-26.25 h-8 bg-[#faf6efc2] rounded-2xl flex justify-center items-center">
                             <span className="text-[11px] font-semibold text-black-secondary">Guest Favorite </span>
                         </div>
                     }

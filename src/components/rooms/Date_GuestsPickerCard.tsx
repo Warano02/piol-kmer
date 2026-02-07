@@ -15,7 +15,7 @@ function Date_GuestsPickerCard({ price, rating, reviews }: Date_GuestsPickerCard
     const { formatPrice } = useCurrency()
     const [tab, setTab] = useState<"date" | "guests" | null>(null)
     return (
-        <div className="sticky top-28 left-0 min-w-[25rem]">
+        <div className="sticky top-28 left-0 min-w-100">
             <div className="rounded-xl shadow border border-lightBorderColor p-5">
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-md font-normal h">

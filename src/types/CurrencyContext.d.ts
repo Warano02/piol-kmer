@@ -9,5 +9,5 @@ export interface ICurrency {
   currency: string; // the currency of the app
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
   currencyList: Currency[];
-  formatPrice:(number)=>number
+  formatPrice:(price:number)=>string
 }
