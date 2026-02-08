@@ -63,7 +63,7 @@ function Header({ width = "container" ,position="sticky"}: Props) {
                         <img src={user?.profile} alt="Profile pricture" className="w-10 h-10 rounded-full" />
                     </Link>}
                     <span className="w-10 h-10 rounded-full bg-gray cursor-pointer flex items-center justify-center" onClick={() => setMenu(pv => !pv)}><FontAwesomeIcon icon={faBars} className="text-gray-500" /> </span>
-                    {menu && <ul className="absolute w-[276px] py-2 bg-white shadow top-20 right-2 p-4 flex flex-col gap-2" style={{ borderRadius: "10px 0 0 10px" }}>
+                    {menu && <ul className="absolute w-69 py-2 bg-white shadow top-20 right-2 p-4 flex flex-col gap-2" style={{ borderRadius: "10px 0 0 10px" }}>
                         {user && list1.map(el => <Li text={el.text} icon={el.icon} to={el.to} />)}
                         <Li text="Help Center" to="/faq" icon={faCircleQuestion} />
                         <hr />

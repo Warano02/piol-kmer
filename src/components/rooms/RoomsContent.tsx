@@ -101,7 +101,7 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
             {showHouseImages && images && <ImageViewer setHider={setHider} setIsSaved={setIsSaved} isSaved={isSaved} selectedImage={selectedImage} setShowHouseImages={setShowHouseImages} images={images} />}
             {showNewPage && House && <ImagePreviewPage setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} setHider={setHider} setShowNewPage={setShowNewPage} isSaved={isSaved} data={House.images} />}
             <header className={`w-full bg-white fixed bottom-0 lg:top-0 lg:bottom-auto left-0 hidden border-t lg:border-b border-borderColor shadow-top ${showHeader ? "opacity-1 z-51" : "lg:opacity-0 lg:z-90"}`}>
-                <div className="max-w-[1120px] px-4 mx-auto flex items-center justify-between">
+                <div className="max-w-280 px-4 mx-auto flex items-center justify-between">
                     <ul className="hidden md:flex gap-4">
                         {
                             TabElem.map((el, i) => (
@@ -156,9 +156,9 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
             </main>
 
             <section className="w-full px-4">
-                <div className="max-w-[1120px] mx-auto py-8">
-                    {/* Title of the House */}
-                    <div className="text-2xl lg:text-3xl font-medium mb-2 w-full flex justify-between">
+                <div className="max-w-280 mx-auto py-8">
+                  
+                    <div aria-label="Title of the House" className="text-2xl lg:text-3xl font-medium mb-2 w-full flex justify-between">
                         <h2 className="h"> {House.title}</h2>
                         <div className="gap-4 items-center hidden lg:flex">
                             <ShareLinks />
@@ -166,8 +166,8 @@ function RoomsContent({ House, setHider }: RoomsContentProps) {
                         </div>
                     </div>
 
-                    {/* Images Preview  */}
-                    <div ref={ImagesRef} className="hidden lg:block h-screen rounded-2xl overflow-hidden my-8 relative min-h-[20vh] max-h-[40vh]">
+                    
+                    <div aria-label="Images Preview " ref={ImagesRef} className="hidden lg:block h-screen rounded-2xl overflow-hidden my-8 relative min-h-[20vh] max-h-[40vh]">
                         {images && <ImagePreviewer setShowNewPage={setShowNewPage} images={images} setSelectedImage={setSelectedImage} setShowHouseImages={setShowHouseImages} />}
                     </div>
 

@@ -1,5 +1,6 @@
 import camera from "@/assets/icon/camera.jpg"
 import Image from "next/image"
+
 export const metadata = {
   title: "Add some photos - PiolKmer",
   description: "Upload Your house picture to continue ! "

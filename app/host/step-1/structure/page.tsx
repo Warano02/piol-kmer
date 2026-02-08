@@ -101,7 +101,7 @@ const TypeOfHouse = ({
   return (
     <div
       onClick={handleClick}
-      className={`w-[180px] h-[120px] border rounded-xl font-medium transition-all duration-150 cursor-pointer relative p-4 flex flex-col items-center justify-center gap-2
+      className={`w-45 h-30 border rounded-xl font-medium transition-all duration-150 cursor-pointer relative p-4 flex flex-col items-center justify-center gap-2
       ${
         isSelected
           ? "border-gray-800 bg-gray-100"
