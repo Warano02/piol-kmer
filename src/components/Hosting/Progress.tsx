@@ -66,9 +66,9 @@ export default function Progress() {
     }
 
     return (
-        <section className="w-full h-[90px] fixed bottom-0 bg-white border-t shadow-sm">
+        <section className="w-full h-22.5 fixed bottom-0 bg-white border-t shadow-sm">
 
-            <div className="w-full h-[12px] flex gap-2 px-4 mt-2">
+            <div className="w-full h-3 flex gap-2 px-4 mt-2">
                 {Steps.map((step, i) => {
                     const isPast = i < currentMainStepIndex
                     const isCurrent = i === currentMainStepIndex
@@ -82,7 +82,7 @@ export default function Progress() {
                 })}
             </div>
 
-            <div className="w-full h-[70px] flex items-center justify-between px-6">
+            <div className="w-full h-17.5 flex items-center justify-between px-6">
                 <button onClick={back} disabled={safeGlobalIndex === 0} className={`px-4 py-2 underline font-semibold ${safeGlobalIndex === 0 ? "opacity-40 cursor-not-allowed" : "cursor-pointer"}`} >
                     Back
                 </button>
