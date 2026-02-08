@@ -29,7 +29,7 @@ const Steps = [
         label: "Photos",
         substeps: [
             "/host/step-3",
-            "/host/step-3/upload",
+            "/host/step-3/instant-book",
             "/host/step-3/order",
         ],
     },
