@@ -1,6 +1,7 @@
 "use client"
 import Progress from "@/components/Hosting/Progress";
 import BtnPrimary from "@/components/ux/BtnPrimary";
+import Provider from "@/lib/Providers/Provider";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -11,31 +12,33 @@ function Host({ children }: { children: React.ReactNode }) {
         setIsHome(pathname === "/host")
     }, [pathname])
     return (
-        <div className="w-full h-full relative">
-            <header className={`w-full h-22 flex px-4 items-center justify-between border `} >
-                <span>
-                    <Svg />
-                </span>
-                <button className="py-2 px-6 rounded border border-black hover:border-gray cursor-pointer font-semibold p">
-                    Exit
-                </button>
-            </header>
-            <main className="w-full h-117.5">
-                {children}
-            </main>
-            {
-                isHome ? (<footer className="w-full h-22 flex items-center justify-end px-4 border-4 fixed bottom-0">
-                    <div className="w-52 h-full flex justify-center items-center">
-                        <BtnPrimary link={"/host/step-1"} >
-                            <span className="text-center p">Get Started</span>
-                        </BtnPrimary>
-                    </div>
-                </footer>)
-                    :
-                    <Progress />
+        <Provider>
+            <div className="w-full h-full relative">
+                <header className={`w-full h-22 flex px-4 items-center justify-between border `} >
+                    <span>
+                        <Svg />
+                    </span>
+                    <button className="py-2 px-6 rounded border border-black hover:border-gray cursor-pointer font-semibold p">
+                        Exit
+                    </button>
+                </header>
+                <main className="w-full h-117.5">
+                    {children}
+                </main>
+                {
+                    isHome ? (<footer className="w-full h-22 flex items-center justify-end px-4 border-4 fixed bottom-0">
+                        <div className="w-52 h-full flex justify-center items-center">
+                            <BtnPrimary link={"/host/step-1"} >
+                                <span className="text-center p">Get Started</span>
+                            </BtnPrimary>
+                        </div>
+                    </footer>)
+                        :
+                        <Progress />
 
-            }
-        </div>
+                }
+            </div>
+        </Provider>
     )
 }
 
