@@ -19,7 +19,7 @@ const Steps = [
         substeps: [
             "/host/step-2",
             "/host/step-2/amenities",
-            "/host/step-2/standards",
+            "/host/step-2/photos",
         ],
     },
     {
