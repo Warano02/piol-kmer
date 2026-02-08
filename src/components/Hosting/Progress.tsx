@@ -21,6 +21,7 @@ const Steps = [
             "/host/step-2/amenities",
             "/host/step-2/photos",
             "/host/step-2/title",
+            "/host/step-2/description",
         ],
     },
     {
