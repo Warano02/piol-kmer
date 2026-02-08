@@ -1,5 +1,6 @@
 import camera from "@/assets/icon/camera.jpg"
 import Image from "next/image"
+import PhotoButton from "./Photo"
 
 export const metadata = {
   title: "Add some photos - PiolKmer",
@@ -14,9 +15,9 @@ function Photos() {
           <h1 className="text-2xl font-bold">Add some photos of your windmill</h1>
           <h4 className="text-gray font-semibold">To get started, add some photos. You can add more or make changes later.</h4>
 
-          <div className="w-full h-182 bg-[#F7F7F7]  border-dashed flex justify-center items-center flex-col gap-6">
+          <div className="mt-12 mb-4 w-full h-92 bg-[#F7F7F7] rounded-lg border  border-dashed flex justify-center items-center flex-col gap-6">
             <Image src={camera} alt="camera image" width={200} height={250} className="object-cover" />
-            <button className="px-6 py-4 border bg-white rounded-lg cursor-pointer font-bold">Add Photos</button>
+            <PhotoButton />
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ export default function Progress() {
     return (
         <section className="w-full h-22.5 fixed bottom-0 bg-white border-t shadow-sm">
 
-            <div className="w-full h-3 flex gap-2 px-4 mt-2">
+            <div className="w-full h-1.5 flex gap-2 px-4 mt-2">
                 {Steps.map((step, i) => {
                     const isPast = i < currentMainStepIndex
                     const isCurrent = i === currentMainStepIndex
