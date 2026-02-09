@@ -13,7 +13,8 @@ function Settings() {
   const { currencyList, currency, setCurrency } = useCurrency()
   const { setShowCurrencySettings } = useAppContext()
   const { languageList, language, setLanguage } = useLanguage()
-
+  const { showCurrencySettings } = useAppContext()
+ if(!showCurrencySettings) return null
   return (
     <div className="fixed w-full h-full  bg-[#222222ab] z-10 flex justify-center items-center" onClick={() => setShowCurrencySettings(false)}>
       <div className="w-3/4 h-3/4 bg-white rounded-3xl p-5" onClick={(ev) => ev.stopPropagation()}>

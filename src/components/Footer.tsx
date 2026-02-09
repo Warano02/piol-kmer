@@ -101,7 +101,7 @@ const Footer = () => {
   ]
   return (
     <footer className="bg-[#F7F7F7] border-t border-borderColor px-4">
-      <div className="max-w-[1200px] mx-auto py-10">
+      <div className="max-w-300 mx-auto py-10">
         <div className="flex flex-wrap gap-4">
           {groupsItems.map((el, i) => (
 
@@ -119,7 +119,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full h-[75px] mt-2 border-t-[0.3px] border-[#cac7c779] flex justify-between items-center">
+      <div className="w-full h-18.75 mt-2 border-t-[0.3px] border-[#cac7c779] flex justify-between items-center">
 
       </div>
     </footer>
