@@ -31,6 +31,7 @@ const Steps = [
             "/host/step-3",
             "/host/step-3/instant-book",
             "/host/step-3/price",
+            "/host/step-3/know-your-customer",
         ],
     },
 ]
