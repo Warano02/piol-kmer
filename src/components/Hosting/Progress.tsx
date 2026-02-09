@@ -30,7 +30,7 @@ const Steps = [
         substeps: [
             "/host/step-3",
             "/host/step-3/instant-book",
-            "/host/step-3/order",
+            "/host/step-3/price",
         ],
     },
 ]
